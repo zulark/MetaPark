@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body{
+ 
+    width:100%;
+    height:100%;
+}
+
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    padding: 40px 100px;
+    z-index: 1000000;
+    background-color: rgba(0, 0, 0, 0.541);
+}  
+
+header .logo{
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: #000 0px 0px 10px;
+    text-decoration: none;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.5s;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25m;
+    margin: 15px;
+    
+}
+#sub{
+    font-size: 11px;
+    font-weight: 300;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    text-shadow: #000 0px 0px 10px;
+}
+
+header.sticky{
+    padding: 5px 100px;
+    background: #fff;
+    text-shadow: none;
+
+}
+header.sticky .logo{
+ 
+        color: #000;
+        text-shadow: none;
+
+}
+
+header.sticky ul li a{
+
+   color: #000;
+   text-shadow: none;
+}
+
+
+header ul li{
+    position: relative;
+    list-style: none;
+    
+}
+
+header ul li a {
+    position: relative;
+    margin: 0 15px; 
+    text-decoration: none;
+    color: #fff;
+    text-shadow: #000 0px 0px 10px;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.5s;
+}
+
+.banner { 
+    position: relative;    
+    height: 100vh;
+    background: url(bg/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.servicos {
+    justify-content: center;
+    display: flex;
+    padding: 150px 250px 50px 250px;
+    background: rgb(53, 53, 53);
+  
+    color: #fff;
+    
+}
+
+.servicos {
+    font-size: 1.8em;
+
+}
+
+.servicos h1{ 
+    
+    text-align: center;
+}
+
+.servicos p{ 
+    justify-content: space-between;
+  
+}
+
+
+
+.footer {
+    width: 50%;
+    height: 20px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.footer #git{
+
+    width: 50px;
+}
