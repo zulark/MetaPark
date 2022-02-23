@@ -182,6 +182,13 @@ header ul li a {
     animation: text_reveal_box 1s ease;
     animation-delay: 1s;
 }
+#main p{
+    
+    color: white;
+    margin-top: 50px;
+    
+  
+}
 
 
 #main .cta{
@@ -231,4 +238,8 @@ header ul li a {
     100%{
         color: white ;
     }
+}
+
+@media (max-wdith: 600px) {
+   
 }
