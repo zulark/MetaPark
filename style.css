@@ -298,6 +298,7 @@ p {
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
+	max-height: 500px;
 }
 #services .service-item::after {
 	content: '';
