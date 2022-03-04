@@ -535,6 +535,12 @@ p {
 }
 /* End Footer */
 
+#map {
+
+	width: 100%;
+	height: 500px;
+
+}
 /* Keyframes */
 @keyframes hamburger_puls {
 	0% {
