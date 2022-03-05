@@ -8,6 +8,7 @@ html {
 	font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
+	background-color: rgb(233, 233, 233);
 }
 a {
 	text-decoration: none;
@@ -410,6 +411,7 @@ p {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 100px 20px;
+	h1
 }
 #about .col-left {
 	width: 250px;
@@ -417,6 +419,7 @@ p {
 }
 #about .col-right {
 	width: 100%;
+	background-color: #fff;
 }
 #about .col-right h2 {
 	font-size: 1.8rem;
@@ -536,12 +539,18 @@ p {
 	font-size: 1.3rem;
 }
 /* End Footer */
-
-#map {
-
-	width: 100%;
-	height: 600px;
-
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+	left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
 /* Keyframes */
 @keyframes hamburger_puls {

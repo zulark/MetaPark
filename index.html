@@ -2,10 +2,6 @@
 <html lang="en">
 
 <head>
-  <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb67d44B072IHp4vxq3ZxZtKsouks5zkU&callback=initMap&libraries=&v=weekly"
-  defer
-></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
@@ -158,6 +154,7 @@
 
   <!-- About Section -->
   <section id="about">
+    <h1 class="section-title">Nossa <span>Equipe</span></h1>
     <div class="about container">
       <div class="col-left">
         <div class="about-img">
@@ -165,8 +162,7 @@
         </div>
       </div>
       <div class="col-right">
-        <h1 class="section-title">Nossa <span>Equipe</span></h1>
-        <h1>Felipe Rudnik</h1>
+        <h1 style="font-size: 4rem;">Felipe Rudnik</h1>
         <h2>Front End</h2>
         <p>Criador do website da Meta Park</p>
 
@@ -181,7 +177,7 @@
       </div>
       <div class="col-right">
     
-        <h1>Alisson Ferro</h1>
+        <h1 style="font-size: 4rem;">Alisson Ferro</h1>
         <h2>Back End</h2>
         <p>Criador do sistema da Meta Park</p>
         <!---<a href="#" class="cta" >Download Resume</a> --->
@@ -195,7 +191,7 @@
       </div>
       <div class="col-right">
     
-        <h1>Samuel Gesser </h1>
+        <h1 style="font-size: 4rem;">Samuel Gesser</h1>
         <h2>Estágiario</h2>
         <p>Ajudou na idealização do projeto</p>
         <!---<a href="#" class="cta" >Download Resume</a> --->
@@ -239,14 +235,12 @@
   </section>
   <!-- End Contact Section -->
 <!-- Map Section -->
-  <section id="maps">
-    <div id="map">
-
-      <iframe src="https://www.google.com/maps/
-      embed?pb=!1m18!1m12!1m3!1d3603.2318713655286!2d-49.266028464609256!3d-25.43051041425647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce46a637002d3%3A0xc7f133d0f842ba58!2sR.%20Conselheiro%20Laurindo%2C%20502%20-%20Centro%2C%20Curitiba%20-%20PR%2C%2080060-100!5e0!3m2!1spt-BR!2sbr!4v1646434921242!5m2!1spt-BR!2sbr" frameborder="0"></iframe>
+<section id="maps">
+  <h1 class="section-title">Encontre-nos <span></span></h1>
+  <div class="map-responsive">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14412.848674946303!2d-49.27342063022461!3d-25.431169299999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce46a637002d3%3A0xc7f133d0f842ba58!2sR.%20Conselheiro%20Laurindo%2C%20502%20-%20Centro%2C%20Curitiba%20-%20PR%2C%2080060-100!5e0!3m2!1spt-BR!2sbr!4v1646446846557!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>   
     </div>
-  </section>
-  
+</section>
 <!-- End Map Section -->
   <!-- Footer -->
   <section id="footer">
@@ -270,31 +264,6 @@
   </section>
   <!-- End Footer -->
   <script src="./app.js"></script>
-  <script type="text/javascript">
-  var lat = -25.4305104;
-  var lon = -49.2660285;
-
-  
-    function getLocation(){
-       if(!navigator.geolocation)
-          return null;
-       navigator.geolocation.getCurrentPosition((pos) => {
-        lat = document.getElementById("lat").innerText = pos.coords.latitude;
-        lon = document.getElementById("lon").innerText = pos.coords.longitude;
-        initMap()
-      });
-    }
-    
-function initMap() {
-
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: lat, lng: lon},
-            zoom: 13,
-        });
-          
-}
-getLocation();
-  </script>
 
 </body>
 
