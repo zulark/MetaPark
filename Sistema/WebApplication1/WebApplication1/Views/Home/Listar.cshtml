@@ -1,0 +1,23 @@
+﻿@using WebApplication1
+@using WebApplication1.Models
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Usuario>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+</head>
+<body>
+    @foreach (Usuario u in Model)
+    {
+        <h1>Nomes</h1>
+        <p>@u.Name <a asp-action="Excluir">Excluir</a></p>
+        <p>@u.Login</p>
+    }
+
+    <p>O número total de nomes cadastrados é: @Model.Count</p>
+
+    <a asp-action="Index">Voltar para o início</a>
+</body>
+</html>
