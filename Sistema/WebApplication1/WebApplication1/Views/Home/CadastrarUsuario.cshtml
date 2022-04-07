@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebApplication1
+@using WebApplication1.Models
+@model WebApplication1.Models.Usuario
+
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -11,20 +16,25 @@
         <h2>Cadastrar</h2>
 
         <form method="POST">
-            Nome<br>
-            <textarea rows="1" cols="20" name="nome"></textarea><br>
-            Sobrenome<br>
-            <textarea rows="1" cols="20" name="sobrenome"></textarea><br>
-            CPF<br>
-            <textarea rows="1" cols="20" name="cpf"></textarea><br>
-            Login<br>
-            <textarea rows="1" cols="20" name="login"></textarea><br>
-            Senha<br>
-            <textarea rows="1" cols="20" name="senha"></textarea><br>
-            Confirmar Senha<br>
-            <textarea rows="1" cols="20" name="confirmaSenha"></textarea><br>
+            <label asp-for="Name">Nome</label>
+            <input asp-for="Name"/><br />
 
-            <button class="botao botao-block">Cadastrar</button><br><br>
+            <label asp-for="LastName">Sobrenome</label>
+            <input asp-for="LastName"/><br />
+
+            <label asp-for="CPF">CPF</label>
+            <input asp-for="CPF"/><br />
+
+            <label asp-for="Login">Login</label>
+            <input asp-for="Login"/><br />
+
+            <label asp-for="Password">Senha</label>
+            <input asp-for="Password"/><br />
+
+            <label asp-for="ConfirmPassword">Confirmar Senha</label>
+            <input asp-for="ConfirmPassword"/><br />
+
+            <button asp-action="Cadastrar_CadastrarUsuario">Cadastrar</button><br><br>
         </form>
 
         <a asp-action="Login">Voltar</a>

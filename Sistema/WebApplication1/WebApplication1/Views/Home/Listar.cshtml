@@ -9,11 +9,10 @@
     <title>Inicio</title>
 </head>
 <body>
-    @foreach (Usuario u in Model)
+    @foreach(Usuario u in Model)
     {
         <h1>Nomes</h1>
-        <p>@u.Name <a asp-action="Excluir">Excluir</a></p>
-        <p>@u.Login</p>
+        @u.Name
     }
 
     <p>O número total de nomes cadastrados é: @Model.Count</p>

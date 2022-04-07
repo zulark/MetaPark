@@ -24,12 +24,14 @@ namespace WebApplication1.Controllers
 
         public void Cadastrar_CadastrarUsuario(Usuario usuario)
         {
+            usuario.Id = BancoDados.usuarios.Count();
             BancoDados.usuarios.Add(usuario);
+            Response.Redirect("Login");
         }
 
         public IActionResult Listar()
         {
-            return View();
+            return View("Listar", BancoDados.usuarios);
         }
 
 
