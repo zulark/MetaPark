@@ -280,6 +280,10 @@ p {
 	max-width: 500px;
 	margin: 0 auto;
 }
+#services .service-top p{
+	font-weight: bold;
+	font-size: 1.5rem;
+}
 #services .service-bottom {
 	display: flex;
 	align-items: center;
@@ -290,20 +294,22 @@ p {
 #services .service-item {
 	flex-basis: 80%;
 	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+	align-items: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	padding: 30px;
 	border-radius: 10px;
-	background-color: #000;
+	background-color: #000 !important;
 	background-size: cover;
 	margin: 10px 5%;
 	position: relative;
 	z-index: 1;
 	overflow: hidden;
-	max-height: 100vh;
-
+	max-height: 350px;
+	height: 350px;
+	font-family: 'Montserrat', sans-serif;
 }
+
 #services .service-item::after {
 	content: '';
 	position: absolute;
@@ -322,7 +328,8 @@ p {
 	
 }
 #services .service-item h2 {
-	font-size: 2rem;
+	top: 0;
+	font-size: 2.5rem;
 	color: white;
 	margin-bottom: 5px;
 	text-transform: uppercase;
@@ -382,6 +389,7 @@ p {
 }
 #projects .project-info p {
 	color: white;
+	font-size: 1.5rem;
 }
 #projects .project-img {
 	flex-basis: 50%;
@@ -420,11 +428,12 @@ p {
 #about .col-left {
 	width: 250px;
 	height: 360px;
+	box-shadow: -9px -8px 15px -2px rgba(0,0,0,0.27);
 }
 #about .col-right {
 	width: 100%;
 	background-color: white;
-	box-shadow: 0px 0px 18px 0 #0000002c;
+	box-shadow: 0px 0px 20px 0 #0000007c;
 }
 #about .col-right h2 {
 	font-size: 1.8rem;
@@ -445,7 +454,8 @@ p {
 	height: 100%;
 	width: 100%;
 	position: relative;
-	border: 10px solid white;
+	border: 5px solid crimson;
+
 }
 #about .col-left .about-img::after {
 	content: '';
@@ -482,7 +492,7 @@ p {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	box-shadow: 0px 0px 18px 0 #0000002c;
+	box-shadow: 5px 5px 30px 5px #0000002c;
 	transition: 0.3s ease box-shadow;
 }
 #contact .contact-item:hover {
@@ -546,14 +556,14 @@ p {
 /* End Footer */
 .map-responsive{
     overflow:hidden;
-    padding-bottom:56.25%;
+    padding-bottom: 35%;
     position:relative;
     height:0;
 }
 .map-responsive iframe{
 	left:0;
     top:0;
-    height:100%;
+    height: 100vh;
     width:100%;
     position:absolute;
 }
@@ -655,7 +665,7 @@ p {
 		top: 34px;
 		height: 98%;
 		width: 98%;
-		border: 10px solid crimson;
+		border: 5px solid crimson;
 	}
 	#about .col-right {
 		text-align: left;
@@ -699,6 +709,7 @@ p {
 		padding-left: 20px;
 	}
 	/* End contact  */
+
 }
 /* End Media Query For Tablet */
 
