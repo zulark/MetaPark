@@ -24,3 +24,29 @@ C:\Users\Aluno\Documents\GitHub\zulark.github.io\Sistema\WebApplication1\WebAppl
 C:\Users\Aluno\Documents\GitHub\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
 C:\Users\Aluno\Documents\GitHub\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 C:\Users\Aluno\Documents\GitHub\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\appsettings.Development.json
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\appsettings.json
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.staticwebassets.runtime.json
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.exe
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.deps.json
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.runtimeconfig.json
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.dll
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\bin\Debug\net6.0\WebApplication1.pdb
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.AssemblyReference.cache
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.AssemblyInfo.cs
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.RazorAssemblyInfo.cache
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.RazorAssemblyInfo.cs
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\staticwebassets.build.json
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\staticwebassets.development.json
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\scopedcss\bundle\WebApplication1.styles.css
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\scopedcss\projectbundle\WebApplication1.bundle.scp.css
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.dll
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\refint\WebApplication1.dll
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
+D:\Alisson Ferro\Documents\GitHub\MetaPark\zulark.github.io\Sistema\WebApplication1\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll

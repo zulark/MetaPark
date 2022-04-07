@@ -1,0 +1,50 @@
+﻿@using WebApplication1
+@using WebApplication1.Models
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Usuario
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Selecionar Veículo</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Selecione um veículo</h1>
+        <table>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Placa</th>
+            </tr>
+            <form action='acessarEstacionamento.php'>
+                
+                @if(Model.VeiculosUsuario.Count == 0)
+                {
+                    <label>Nenhum veículo cadastrado</label>
+                }
+
+               @for (int i = 0; i < Model.VeiculosUsuario.Count; i++){
+                    <tr><td> @Model.VeiculosUsuario[i].Marca</td>
+                    <td> @Model.VeiculosUsuario[i].Modelo</td>
+                    <td> @Model.VeiculosUsuario[i].Placa</td>
+                    <td>
+                        <a asp-action="Selecionar">Selecionar</a>
+                    </td>
+                    </tr>
+               }
+            </form>
+
+        </table><br>
+
+        <p>
+            <a class="botao botao-block" id="cadastrar" href="cadastrarVeiculo.php">Cadastrar Veículo</a><br>
+        </p>
+
+    </div>
+</body>
+
+</html>

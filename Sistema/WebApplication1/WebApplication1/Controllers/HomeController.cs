@@ -24,9 +24,22 @@ namespace WebApplication1.Controllers
 
         public void Cadastrar_CadastrarUsuario(Usuario usuario)
         {
+            if(usuario.Name == null)
+            {
+                Response.Redirect("CadastrarUsuario");
+            }
+            else
+            {
             usuario.Id = BancoDados.usuarios.Count();
             BancoDados.usuarios.Add(usuario);
             Response.Redirect("Login");
+            }
+        }
+
+        public IActionResult Entrar(Usuario usuario)
+        {
+
+            return View("Entrar", usuario);
         }
 
         public IActionResult Listar()
