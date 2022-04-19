@@ -1,7 +1,7 @@
 ﻿@using WebApplication1
 @using WebApplication1.Models
 @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
-@model List<Usuario>
+@model List<Usuario>;
 
 <!DOCTYPE html>
 <html>
@@ -9,13 +9,10 @@
     <title>Inicio</title>
 </head>
 <body>
-    @foreach(Usuario u in Model)
-    {
-        <h1>Nomes</h1>
-        @u.Name
-    }
+    
 
-    <p>O número total de nomes cadastrados é: @Model.Count</p>
+
+    <p>O número total de nomes cadastrados é: @Usuario.listagem.Count</p>
     
     <a asp-action="Login" text-decoration:none><button>Voltar</button></a>
 </body>

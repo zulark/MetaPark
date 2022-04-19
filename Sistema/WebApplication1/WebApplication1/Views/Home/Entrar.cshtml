@@ -20,22 +20,26 @@
                 <th>Modelo</th>
                 <th>Placa</th>
             </tr>
-            <form action='acessarEstacionamento.php'>
-                
-                @if(Model.VeiculosUsuario.Count == 0)
-                {
-                    <label>Nenhum veículo cadastrado</label>
-                }
+            <form>
 
-               @for (int i = 0; i < Model.VeiculosUsuario.Count; i++){
-                    <tr><td> @Model.VeiculosUsuario[i].Marca</td>
-                    <td> @Model.VeiculosUsuario[i].Modelo</td>
-                    <td> @Model.VeiculosUsuario[i].Placa</td>
-                    <td>
-                        <a asp-action="Selecionar">Selecionar</a>
-                    </td>
+                @for (int i = 0; i < Usuario.VeiculosUsuario.Count; i++)
+                {
+                    @if (Usuario.VeiculosUsuario[i].IdUsuario != @Model.Id)
+                    {
+                        <label>Nenhum veículo cadastrado</label>
+                    }
+                    else
+                    {
+                    <tr>
+                        <td> @Usuario.VeiculosUsuario[i].Marca</td>
+                        <td> @Usuario.VeiculosUsuario[i].Modelo</td>
+                        <td> @Usuario.VeiculosUsuario[i].Placa</td>
+                        <td>
+                            <a asp-action="Selecionar">Selecionar</a>
+                        </td>
                     </tr>
-               }
+                    }
+                }
             </form>
 
         </table><br>

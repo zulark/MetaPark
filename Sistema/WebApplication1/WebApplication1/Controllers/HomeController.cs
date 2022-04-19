@@ -24,27 +24,36 @@ namespace WebApplication1.Controllers
 
         public void Cadastrar_CadastrarUsuario(Usuario usuario)
         {
-            if(usuario.Name == null)
+            if (usuario.Name == null)
             {
                 Response.Redirect("CadastrarUsuario");
             }
             else
             {
-            usuario.Id = BancoDados.usuarios.Count();
-            BancoDados.usuarios.Add(usuario);
-            Response.Redirect("Login");
+                usuario.Id = Usuario.listagem.Count();
+                Usuario.listagem.Add(usuario);
+                Response.Redirect("Login");
             }
         }
 
-        public IActionResult Entrar(Usuario usuario)
+        public IActionResult Entrar()
         {
+            /*
+            for (int i = 0; i < Usuario.listagem.Count; i++)
+            {
+                if (Usuario.listagem[i].Login == usuario.Login)
+                {
+                    Usuario.listagem[i] = usuario;
+                    return View("Entrar", usuario);
 
-            return View("Entrar", usuario);
+                }                
+            }*/
+            return View("Index");
         }
 
         public IActionResult Listar()
         {
-            return View("Listar", BancoDados.usuarios);
+            return View("Listar", Usuario.listagem);
         }
 
 
