@@ -1,0 +1,106 @@
+
+html, body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #333 !important;
+  margin: 0;
+  padding: 0;
+}
+
+.container { 
+    background-color: #333;
+}
+
+form {
+  max-width: 300px;
+  margin: 25vh auto;
+  text-align: center;
+}
+
+#title { 
+  margin: 1rem;
+  color: #fff;
+}
+
+#title span{
+    color: crimson;
+}
+
+
+label {
+  color: #fff;
+  font-size: .900rem;
+  margin-top: 20px !important;
+  margin-bottom: 5px !important;
+}
+
+input{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #ccc;
+  border-radius: .1875rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: .875rem;
+  margin-bottom: 1rem;
+  padding: .275rem;
+  width: 100%;
+  text-align: center;
+}
+
+select { 
+  border: 1px solid #ccc;
+  border-radius: .1875rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: .875rem;
+  margin-bottom: 1rem;
+  padding: .275rem;
+  width: 100%;
+  text-align: center;
+}
+.other-options {
+  
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;    
+  }
+  .other-options:hover{ 
+      color:crimson
+  }
+
+  .remember-me label {
+      font-size: 1rem;
+  }
+  .remember-me {
+      float: left;
+  }
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
+  display: inline-block;
+  width: auto;
+}
+
+
+  .inputinfo { 
+    outline: none;
+}
+input[type="submit"] {
+  background-color: crimson !important;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: .5rem 1rem;
+}
+
+#passwordSmall {
+  float: left;
+  color: rgb(241, 74, 74) !important;
+  font-size: .8rem;
+}
+
