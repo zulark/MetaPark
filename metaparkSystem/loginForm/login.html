@@ -12,26 +12,27 @@
 
     <div class="container">
         <form>
-            <h1 id="title"><span>M</span>eta<span>P</span>ark</h1>
-            <label for="email">Email</label>
-            <input type="email" id="email">
-            <label for="pass">Senha</label>
-            <input type="password" id="password">
-            <div class="remember-me">
-                
+            <div class="login-box">
+                <h1 id="title"><span>M</span>eta<span>P</span>ark</h1>
+                <label class="label-input" for="email">Email</label>
+                <input type="email" id="email" required>
+                <label class="label-input" for="pass">Senha</label>
+                <input type="password" id="password" required>
+                <div class="remember-me">
                 <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Lembrar senha</label>
+                </div>
+                <input type="submit" value="Entrar" onclick="lsRememberMe()">
+                
+                <div class="other-options">
+                    <a href="../registerForm/register.html" class="other-options">
+                        Cadastre-se
+                    </a>
+                    <a href="../recoverPassword/recover.html" class="other-options">
+                        Recuperar senha
+                    </a>
+                </div>
             </div>
-            <input type="submit" value="Entrar" onclick="lsRememberMe()">
-            
-            <div class="other-options">
-                <a href="../registerForm/register.html" class="other-options">
-                    Cadastre-se
-                </a>
-                <a href="../recoverPassword/recover.html" class="other-options">
-                    Recuperar senha
-                </a>
-            </div>
-                              
+
         </form>
     </div>
 

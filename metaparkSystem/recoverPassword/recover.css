@@ -1,14 +1,21 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 html, body {
-    font-family: "Open Sans", sans-serif;
+font-family: 'Dosis', sans-serif !important;  
     background-color: #333 !important;
     margin: 0;
     padding: 0;
     overflow: hidden;
   }
   
-  .container { 
-      background-color: #333;
+  .login-box { 
+    width: 400px;
+    padding: 40px;    
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
   }
 
   form {
@@ -20,6 +27,7 @@ html, body {
   #title { 
     margin: 1rem;
     color: #fff;
+    text-transform: uppercase;
   }
 
   #title span{
@@ -56,9 +64,10 @@ html, body {
     justify-content: space-between;
     font-size: 1rem;    
     margin-top: 10px;
+    transition: .2s;
     }
     .other-options:hover{ 
-        color:crimson
+     color: crimson !important;
     }
 
     .remember-me{ 
@@ -88,11 +97,15 @@ html, body {
   input[type="submit"] {
     background-color: crimson !important;
     border: none;
-    color: #fff;
-    font-size: 1.2rem;
+    color: #f2f2f2;
+    font-size: 1.1rem;
     padding: .5rem 1rem;
     margin-top: 1.2rem ;
+    transition: .2s;
+  }
 
+  input[type="submit"]:hover{
+    background-color: rgb(167, 14, 44) !important;
   }
 
   

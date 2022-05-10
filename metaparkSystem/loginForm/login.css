@@ -1,15 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 html, body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Dosis', sans-serif !important;  
     background-color: #333 !important;
     margin: 0;
     padding: 0;
     overflow: hidden;
   }
   
-  .container { 
-      background-color: #333;
-  }
 
   form {
     max-width: 300px;
@@ -17,9 +14,23 @@ html, body {
     text-align: center;
   }
   
+  form i {
+    margin-left: -30px;
+            cursor: pointer;
+  }
+.login-box { 
+  width: 400px;
+  padding: 40px;    
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  background-color: #444;
+}
+
   #title { 
-    margin: 1rem;
+    margin: 1.2rem;
     color: #fff;
+    text-transform: uppercase;
   }
 
   #title span{
@@ -27,9 +38,16 @@ html, body {
   }
 
   
-  label {
+  .label-input {
     color: #fff;
     font-size: .900rem;
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+    float: left;
+  }
+  label {
+    color: #fff;
+    font-size: 1rem;
     margin-top: 20px !important;
     margin-bottom: 5px !important;
   }
@@ -45,7 +63,7 @@ html, body {
     margin-bottom: 1rem;
     padding: .275rem;
     width: 100%;
-    text-align: center;
+    letter-spacing: 1px;
   }
   .other-options {
     
@@ -55,9 +73,10 @@ html, body {
     justify-content: space-between;
     font-size: 1rem;    
     margin-top: 10px;
-    }
+    transition: .2s;  
+  }
     .other-options:hover{ 
-        color:crimson
+        color:crimson !important
     }
 
     .remember-me{ 
@@ -90,6 +109,9 @@ html, body {
     color: #fff;
     font-size: 1.2rem;
     padding: .5rem 1rem;
+    transition: .2s;
   }
   
- 
+  input[type="submit"]:hover{
+    background-color: rgb(167, 14, 44) !important;
+  }
