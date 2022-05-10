@@ -10,22 +10,10 @@
 
         public static List<Veiculo> listaVeiculos = new List<Veiculo>();
 
-        public Veiculo()
+        static Veiculo()
         {
-            Veiculo.listaVeiculos.Add(new Veiculo
-            {
-                IdVeiculo = 0,
-                Marca = "Ford",
-                Modelo = "KA",
-                Placa = "ABC1234"
-            });
-            Veiculo.listaVeiculos.Add(new Veiculo
-            {
-                IdVeiculo = 1,
-                Marca = "VW",
-                Modelo = "Gol",
-                Placa = "ABC1234"
-            });
+            Veiculo.listaVeiculos.Add(new Veiculo{IdVeiculo = 0,Marca = "Ford", Modelo = "KA", Placa = "ABC1234"});
+            Veiculo.listaVeiculos.Add(new Veiculo{IdVeiculo = 1,Marca = "VW",Modelo = "Gol",Placa = "ABC4321"});
         }
 
     }

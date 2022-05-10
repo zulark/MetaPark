@@ -36,9 +36,9 @@ namespace WebApplication1.Controllers
             }
         }
 
-        public IActionResult Entrar()
+        public IActionResult Entrar(Usuario usuario)
         {
-            /*
+            
             for (int i = 0; i < Usuario.listagem.Count; i++)
             {
                 if (Usuario.listagem[i].Login == usuario.Login)
@@ -47,8 +47,13 @@ namespace WebApplication1.Controllers
                     return View("Entrar", usuario);
 
                 }                
-            }*/
-            return View("Index");
+            }
+            return View("Entrar");
+        }
+
+        public IActionResult FormCadastrarVeiculo()
+        {
+            return View("CadastrarVeiculo");
         }
 
         public IActionResult Listar()
