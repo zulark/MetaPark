@@ -23,14 +23,14 @@
         <form>
             <div class="login-box">
                 <h1 id="title"><span>M</span>eta<span>P</span>ark</h1>
-                <label class="label-input" for="email">Email</label>
+                <label class="label-input" asp-for="Login">Email</label>
                 <input  id="email" required>
-                <label class="label-input" for="pass">Senha</label>
+                <label class="label-input" asp-for="Password">Senha</label>
                 <input type="password" id="password" required>
                 <div class="remember-me">
                 <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Lembrar senha</label>
                 </div>
-                <input type="submit" value="Entrar" onclick="lsRememberMe()">
+                <input asp-action="Entrar" type="submit" value="Entrar" onclick="lsRememberMe()">
                 
                 <div class="other-options">
                     <a asp-action="CadastrarUsuario" class="other-options">

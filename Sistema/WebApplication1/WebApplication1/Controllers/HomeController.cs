@@ -41,9 +41,9 @@ namespace WebApplication1.Controllers
             }
         }
 
-        public IActionResult Entrar(Usuario usuario)
+        public IActionResult Entrar()
         {
-            
+            /*
             for (int i = 0; i < Usuario.listagem.Count; i++)
             {
                 if (Usuario.listagem[i].Login == usuario.Login)
@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
                     return View("Entrar", usuario);
 
                 }                
-            }
+            }*/
             return View("Index");
         }
 

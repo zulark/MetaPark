@@ -8,7 +8,6 @@
         public string CPF { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
         public static List<Usuario> listagem = new List<Usuario>();
         public static List<Veiculo> VeiculosUsuario = new List<Veiculo>();
 
@@ -21,8 +20,7 @@
                 LastName = "Teste",
                 CPF = "12345678910",
                 Login = "user",
-                Password = "1234",
-                ConfirmPassword = "1234",
+                Password = "1234"
             });
             Usuario.listagem.Add(new Usuario
             {
@@ -31,8 +29,7 @@
                 LastName = "Teste",
                 CPF = "12345678911",
                 Login = "user2",
-                Password = "1234",
-                ConfirmPassword = "1234",
+                Password = "1234"
             });
             Veiculo.listaVeiculos.Add(new Veiculo
             {
