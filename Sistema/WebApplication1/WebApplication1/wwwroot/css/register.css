@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+html, body {
+/*   font-family: "Open Sans", sans-serif; */
+  font-family: 'Dosis', sans-serif !important;  
+  background-color: #333 !important;
+  margin: 0;
+  padding: 0;
+}
+.custom-shape-divider-bottom-1652222402 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -1;
+
+}
+
+.custom-shape-divider-bottom-1652222402 svg {
+  position: relative;
+  display: block;
+  width: calc(109% + 1.3px);
+  height: 500px;
+}
+.custom-shape-divider-bottom-1652222402 .shape-fill {
+  fill: rgba(220, 20, 60, 0.775);
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1652222402 svg {
+      width: calc(110% + 1.3px);
+      height: 500px;
+  }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1652222402 svg {
+      width: calc(300% + 1.3px);
+      height: 329px;
+  }
+}
+
+.login-box { 
+  width: 400px;
+  padding: 40px;    
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+}
+
+form {
+  max-width: 300px;
+  margin: 10vh auto;
+  text-align: center;
+}
+
+#title { 
+  margin: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#title span{
+    color: crimson;
+}
+
+label span{
+  color: crimson;
+}
+
+.label-input {
+  color: #fff;
+  font-size: .900rem;
+  margin-top: 20px !important;
+  margin-bottom: 5px !important;
+  text-align: left;
+}
+
+label {
+  color: #fff;
+  font-size: .955rem;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+input{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #ccc;
+  border-radius: .1875rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: .875rem;
+  margin-bottom: 1rem;
+  padding: .275rem;
+  width: 100%;
+  text-align: left;
+}
+
+.date {
+  text-align: center;
+}
+
+.input-group-prepend button{
+  background-color: #555;
+  color: #fff !important;
+}
+
+select { 
+  border: 1px solid #ccc;
+  border-radius: .1875rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: .875rem;
+  margin-bottom: 1rem;
+  padding: .275rem;
+  width: 100%;
+  text-align: center;
+}
+.other-options {
+  
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;   
+    margin-top: 20px;
+  transition: .2s;
+  }
+
+
+
+  .other-options:hover{ 
+      color:crimson
+  }
+
+  .remember-me label {
+      font-size: 1rem;
+  }
+  .remember-me {
+    text-align: left;
+  }
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+     -moz-appearance: checkbox;
+          appearance: checkbox;
+  display: inline-block;
+  width: auto;
+}
+
+.inputinfo { 
+    outline: none;
+}
+
+input[type="submit"] {
+  background-color: crimson !important;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: .5rem 1rem;
+  text-align: center;
+  transition: .2s;
+}
+
+input[type="submit"]:hover{
+  background-color: rgb(167, 14, 44) !important;
+}
+
+#passwordSmall {
+  float: left;
+  color: rgb(241, 74, 74) !important;
+  font-size: .8rem;
+}
+
