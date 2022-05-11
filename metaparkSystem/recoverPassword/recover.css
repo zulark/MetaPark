@@ -6,7 +6,41 @@ font-family: 'Dosis', sans-serif !important;
     padding: 0;
     overflow: hidden;
   }
-  
+  .custom-shape-divider-bottom-1652223312 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1652223312 svg {
+    position: relative;
+    display: block;
+    width: calc(109% + 1.3px);
+    height: 500px;
+}
+
+.custom-shape-divider-bottom-1652223312 .shape-fill {
+    fill: #DC143C;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-bottom-1652223312 svg {
+        width: calc(110% + 1.3px);
+        height: 500px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-bottom-1652223312 svg {
+        width: calc(300% + 1.3px);
+        height: 329px;
+    }
+}
   .login-box { 
     width: 400px;
     padding: 40px;    
@@ -16,6 +50,8 @@ font-family: 'Dosis', sans-serif !important;
     background-color: #444;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    z-index: 1;
   }
 
   form {
