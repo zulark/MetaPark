@@ -1,76 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
-html, body {
-/*   font-family: "Open Sans", sans-serif; */
-  font-family: 'Dosis', sans-serif !important;  
-  background-color: #333 !important;
+
+*{
   margin: 0;
   padding: 0;
 }
-.custom-shape-divider-bottom-1652222402 {
+body {
+    font-family: 'Dosis', sans-serif !important;  
+    height: 100vh;
+    background-image: url('https://royalhorseshoe.com/wp-content/uploads/2017/01/wallpaper-triangles-geometry-black-minimalistic-geometric-wallpapers.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+
+form {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  z-index: -1;
-
-}
-
-.custom-shape-divider-bottom-1652222402 svg {
-  position: relative;
-  display: block;
-  width: calc(109% + 1.3px);
-  height: 500px;
-}
-.custom-shape-divider-bottom-1652222402 .shape-fill {
-  fill: rgba(220, 20, 60, 0.775);
-}
-
-/** For tablet devices **/
-@media (min-width: 768px) and (max-width: 1023px) {
-  .custom-shape-divider-bottom-1652222402 svg {
-      width: calc(110% + 1.3px);
-      height: 500px;
-  }
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-  .custom-shape-divider-bottom-1652222402 svg {
-      width: calc(300% + 1.3px);
-      height: 329px;
-  }
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login-box { 
-  width: 400px;
-  padding: 40px;    
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-  border-radius: 10px;
-  background-color: #444;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  z-index: 1;
-}
+min-width: 500px;
+padding: 50px;    
+box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+border-radius: 10px;
+background-color: #444;
+text-align: center;
+display: flex;
+flex-direction: column;
 
-form {
-  max-width: 300px;
-  margin: 10vh auto;
-  text-align: center;
 }
 
 #title { 
-  margin: 1rem;
   color: #fff;
   text-transform: uppercase;
+  font-weight: bold;
 }
-
-#title span{
-    color: crimson;
+#title span{ 
+  color: crimson;
 }
 
 label span{
@@ -90,6 +59,7 @@ label {
   font-size: .955rem;
   margin-top: 20px !important;
   margin-bottom: 10px !important;
+  font-weight: 600;
 }
 
 input{
@@ -176,8 +146,48 @@ input[type="submit"]:hover{
 }
 
 #passwordSmall {
-  float: left;
+  display: flex;
   color: rgb(241, 74, 74) !important;
   font-size: .8rem;
+  margin: 5px 0 15px 0;
 }
 
+.other-options {
+    
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;    
+  margin-top: 10px;
+  transition: .2s;  
+  font-weight: 600;
+}
+  .other-options:hover{ 
+      color:crimson !important
+  }
+
+#privacy {
+    margin-top: 10px;
+    color: #fff;
+    font-weight: 400;
+    font-size: .800rem  ;
+}
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+  .custom-shape-divider-bottom-1652222402 svg {
+      width: calc(110% + 1.3px);
+      height: 500px;
+  }
+
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1652222402 svg {
+      width: calc(300% + 1.3px);
+      height: 329px;
+  }
+
+
+}

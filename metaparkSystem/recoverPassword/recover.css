@@ -1,71 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
-html, body {
-font-family: 'Dosis', sans-serif !important;  
-    background-color: #333 !important;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  .custom-shape-divider-bottom-1652223312 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
 
-.custom-shape-divider-bottom-1652223312 svg {
-    position: relative;
-    display: block;
-    width: calc(109% + 1.3px);
-    height: 500px;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-.custom-shape-divider-bottom-1652223312 .shape-fill {
-    fill: #DC143C;
-}
-
-/** For tablet devices **/
-@media (min-width: 768px) and (max-width: 1023px) {
-    .custom-shape-divider-bottom-1652223312 svg {
-        width: calc(110% + 1.3px);
-        height: 500px;
-    }
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-    .custom-shape-divider-bottom-1652223312 svg {
-        width: calc(300% + 1.3px);
-        height: 329px;
-    }
-}
-  .login-box { 
-    width: 400px;
-    padding: 40px;    
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-    border-radius: 10px;
-    background-color: #444;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    z-index: 1;
+body {
+    font-family: 'Dosis', sans-serif !important;  
+    height: 100vh;
+    background-image: url('https://royalhorseshoe.com/wp-content/uploads/2017/01/wallpaper-triangles-geometry-black-minimalistic-geometric-wallpapers.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
   }
 
-  form {
-    max-width: 300px;
-    margin: 25vh auto;
-    text-align: center;
-  }
-  
-  #title { 
-    margin: 1rem;
-    color: #fff;
-    text-transform: uppercase;
-  }
+form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.login-box { 
+font-weight: 600 !important;
+min-width: 500px;
+padding: 50px;    
+box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+border-radius: 10px;
+background-color: #444;
+text-align: center;
+display: flex;
+flex-direction: column;
+
+}
+
+#title { 
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
   #title span{
       color: crimson;
   }
@@ -76,6 +49,8 @@ font-family: 'Dosis', sans-serif !important;
     font-size: .900rem;
     margin-top: 20px !important;
     margin-bottom: 5px !important;
+    font-weight: 600;
+    text-align: left;
   }
   input {
     -webkit-appearance: none;
@@ -133,25 +108,28 @@ font-family: 'Dosis', sans-serif !important;
   input[type="submit"] {
     background-color: crimson !important;
     border: none;
-    color: #f2f2f2;
-    font-size: 1.1rem;
+    color: #fff;
+    font-size: 1.2rem;
     padding: .5rem 1rem;
-    margin-top: 1.2rem ;
     transition: .2s;
+    font-weight: 500;
+    margin-top: 15px;
   }
 
   input[type="submit"]:hover{
     background-color: rgb(167, 14, 44) !important;
+    
   }
 
   
   #info {
-      color: #fff !important;
+      color: #f2f2f2 !important;
       font-size: .9rem;
+      font-weight: 500;
+      margin-top: 10px;
   }
 
   hr{
-      margin-top: 1.5rem !important;
       color: #fff !important;
   }
  
