@@ -3,6 +3,7 @@
 @using WebApplication1.Models
 @model WebApplication1.Models.Usuario
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,18 +21,26 @@
         </svg>
     </div>
     <div class="container">
-        <form>
+        <form method="post">
             <div class="login-box">
                 <h1 id="title"><span>M</span>eta<span>P</span>ark</h1>
-                <label class="label-input" asp-for="Login">Email</label>
-                <input  id="email" required>
-                <label class="label-input" asp-for="Password">Senha</label>
-                <input type="password" id="password" required>
-                <div class="remember-me">
-                <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Lembrar senha</label>
+                @*<label class="label-input" asp-for="Login">Email</label>*@
+                <div class="label-input">
+                    @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
                 </div>
-                <input asp-action="Entrar" type="submit" value="Entrar" onclick="lsRememberMe()">
-                
+                @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
+                @*<input  id="email" required>*@
+                @*<label class="label-input" asp-for="Password">Senha</label>*@
+                <div class="label-input">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                </div>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @*<input type="password" id="password" required>*@
+                <div class="remember-me">
+                    <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Lembrar senha</label>
+                </div>
+                <a asp-action="Entrar" type="submit" value="Entrar" onclick="lsRememberMe()">Entrar</a>
+
                 <div class="other-options">
                     <a asp-action="CadastrarUsuario" class="other-options">
                         Cadastre-se
@@ -43,7 +52,7 @@
             </div>
 
         </form>
-   
+
     </div>
 
 </body>

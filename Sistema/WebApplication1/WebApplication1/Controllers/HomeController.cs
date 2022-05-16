@@ -6,6 +6,14 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DBContext _context;
+
+        public HomeController(DBContext context)
+        {
+            _context = context;
+        }
+
+
         public IActionResult Index()
         {
             return View();
@@ -41,24 +49,33 @@ namespace WebApplication1.Controllers
             }
         }
 
-        public IActionResult Entrar()
+        public IActionResult Entrar(Usuario usuario)
         {
             /*
+            Usuario usuarioEncontrado = new Usuario();
+            usuarioEncontrado = _context.Usuario.FirstOrDefault(a => usuario.Login == a.Login && usuario.Password == a.Password);
+            if(usuarioEncontrado == null)
+            {
+                return View("Index");
+            }
             for (int i = 0; i < Usuario.listagem.Count; i++)
             {
-                if (Usuario.listagem[i].Login == usuario.Login)
+                if(Usuario.listagem[i].Login == login && Usuario.listagem[i].Password == senha)
                 {
-                    Usuario.listagem[i] = usuario;
-                    return View("Entrar", usuario);
-
-                }                
+                    usuarioEncontrado = Usuario.listagem[i];
+                    break;
+                }              
+            }
+            if(usuarioEncontrado == null)
+            {
+                return View("Login");
             }*/
             return View("Index");
         }
 
         public IActionResult Listar()
         {
-            return View("Listar", Usuario.listagem);
+            return View("Listar",_context.Usuario.ToList());
         }
 
 
