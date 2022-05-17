@@ -2,14 +2,14 @@
 
 namespace WebApplication1.Models
 {
-    public class DBContext : DbContext
+    public class SistemaContext : DbContext
     {
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Veiculo> Veiculo { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=SERVIDOR\SQLEXPRESS01;Database=Estacionamento;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"SNCCH01LABF118\TEW_SQLEXPRESS;Database=Estacionamento;Trusted_Connection=True;");
         }
     }
 }

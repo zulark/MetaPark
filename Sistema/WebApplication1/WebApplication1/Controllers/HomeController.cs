@@ -6,13 +6,12 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly DBContext _context;
+        private readonly SistemaContext _context;
 
-        public HomeController(DBContext context)
+        public HomeController(SistemaContext context)
         {
             _context = context;
         }
-
 
         public IActionResult Index()
         {
@@ -34,7 +33,7 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-
+        /*
         public void Cadastrar_CadastrarUsuario(Usuario usuario)
         {
             if (usuario.Name == null)
@@ -47,29 +46,31 @@ namespace WebApplication1.Controllers
                 Usuario.listagem.Add(usuario);
                 Response.Redirect("Login");
             }
+        }*/
+
+        public IActionResult BuscarUsuario()
+        {
+            return RedirectToAction("Entrar");
         }
 
-        public IActionResult Entrar(Usuario usuario)
+        public IActionResult Entrar(string Login, string Senha)
         {
-            /*
+            
             Usuario usuarioEncontrado = new Usuario();
-            usuarioEncontrado = _context.Usuario.FirstOrDefault(a => usuario.Login == a.Login && usuario.Password == a.Password);
+            usuarioEncontrado = _context.Usuario.FirstOrDefault(a => Login == a.Login);
+
             if(usuarioEncontrado == null)
             {
                 return View("Index");
             }
-            for (int i = 0; i < Usuario.listagem.Count; i++)
+            for (int i = 0; i < _context.Usuario.Count(); i++)
             {
-                if(Usuario.listagem[i].Login == login && Usuario.listagem[i].Password == senha)
+                if(_context.Usuario.ToList()[i].Login == Login && _context.Usuario.ToList()[i].Senha == Senha)
                 {
-                    usuarioEncontrado = Usuario.listagem[i];
+                    usuarioEncontrado = _context.Usuario.ToList()[i];
                     break;
                 }              
             }
-            if(usuarioEncontrado == null)
-            {
-                return View("Login");
-            }*/
             return View("Index");
         }
 
