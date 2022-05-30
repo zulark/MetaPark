@@ -9,10 +9,11 @@
     <title>Inicio</title>
 </head>
 <body>
+
     @for (int i = 0; i < @Model.Count; i++)
     {
         <h1>Nomes</h1>
-        @Model[i].Name
+        @Model[i].Nome
     }
 
     <p>O número total de nomes cadastrados é: @Model.Count</p>

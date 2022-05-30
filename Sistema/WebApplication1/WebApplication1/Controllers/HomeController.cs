@@ -1,18 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
+using System.Security.Cryptography;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly DBContext _context;
+        private readonly EstacionamentoContext _context;
 
-        public HomeController(DBContext context)
+        public HomeController(EstacionamentoContext context)
         {
             _context = context;
         }
-
 
         public IActionResult Index()
         {
@@ -35,6 +37,11 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public IActionResult CadastrarVeiculo()
+        {
+            return View();
+        }
+        /*
         public void Cadastrar_CadastrarUsuario(Usuario usuario)
         {
             if (usuario.Name == null)
@@ -47,29 +54,31 @@ namespace WebApplication1.Controllers
                 Usuario.listagem.Add(usuario);
                 Response.Redirect("Login");
             }
-        }
+        }*/
 
         public IActionResult Entrar(Usuario usuario)
-        {
-            /*
+        {            
             Usuario usuarioEncontrado = new Usuario();
-            usuarioEncontrado = _context.Usuario.FirstOrDefault(a => usuario.Login == a.Login && usuario.Password == a.Password);
-            if(usuarioEncontrado == null)
+            usuarioEncontrado = _context.Usuario.FirstOrDefault(a => usuario.Login == a.Login && usuario.Senha == a.Senha) ;
+            if(usuarioEncontrado != null)
             {
-                return View("Index");
-            }
-            for (int i = 0; i < Usuario.listagem.Count; i++)
-            {
-                if(Usuario.listagem[i].Login == login && Usuario.listagem[i].Password == senha)
+                List<Veiculo> veiculos = _context.Veiculo.ToList();
+                List<Veiculo> veiculosEncontrados = new List<Veiculo>();
+                for (int i = 0; i < _context.Veiculo.Count(); i++)
                 {
-                    usuarioEncontrado = Usuario.listagem[i];
-                    break;
-                }              
+                    if(veiculos[i].idUsuario == usuarioEncontrado.idUsuario)
+                    {
+                        veiculosEncontrados.Add(veiculos[i]);
+                    }
+                }
+                ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
+                    //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+                return View("Entrar", veiculosEncontrados);
             }
             if(usuarioEncontrado == null)
             {
                 return View("Login");
-            }*/
+            }
             return View("Index");
         }
 

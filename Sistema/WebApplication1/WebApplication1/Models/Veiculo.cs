@@ -2,14 +2,14 @@
 {
     public class Veiculo
     {
-        public int IdVeiculo { get; set; }
-        public int IdUsuario { get; set; }
+        public int idVeiculo { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public string Placa { get; set; }
+        public int idUsuario { get; set; }
 
+        /*
         public static List<Veiculo> listaVeiculos = new List<Veiculo>();
-
         public Veiculo()
         {
             Veiculo.listaVeiculos.Add(new Veiculo
@@ -26,7 +26,7 @@
                 Modelo = "Gol",
                 Placa = "ABC1234"
             });
-        }
+        }*/
 
     }
 }

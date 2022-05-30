@@ -21,10 +21,10 @@ CREATE TABLE Veiculo(
 	Modelo varchar(30) NOT NULL,
 	Placa varchar(8),
 	idUsuario int,
-	PRIMARY KEY (
-		idVeiculo ASC
-	)
-)
+PRIMARY KEY (idVeiculo ASC))
+
+ALTER TABLE Veiculo
+ADD FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario);
 
 CREATE TABLE Entrada(
 	idAcesso int identity(1,1), 
@@ -47,6 +47,11 @@ INSERT INTO Usuario VALUES ('Oliver', 'Ramos','797.620.466-17',HASHBYTES('MD5','
 INSERT INTO Usuario VALUES ('Márcia', 'Nunes','068.133.269-70',HASHBYTES('MD5','marciaN'),HASHBYTES('MD5','123456'),1);
 INSERT INTO Usuario VALUES ('Marcos', 'Mendes','663.361.084-06',HASHBYTES('MD5','marcosM'),HASHBYTES('MD5','123456'),1);
 
+INSERT INTO Usuario VALUES ('Natália', 'Barros','023.706.406-50','nataliab', '123456', 1);
+INSERT INTO Usuario VALUES ('Noah', 'Barros','317.559.841-20','noahB','123456',1);
+INSERT INTO Usuario VALUES ('Oliver', 'Ramos','797.620.466-17','OliverR','123456',1);
+INSERT INTO Usuario VALUES ('Márcia', 'Nunes','068.133.269-70','marciaN','123456',1);
+INSERT INTO Usuario VALUES ('Marcos', 'Mendes','663.361.084-06','marcosM','123456',1);
 
 INSERT INTO Veiculo VALUES ('Peugeot', '206','BVQ7861',1);
 INSERT INTO Veiculo VALUES ('Kia', 'Sorento','JVT6953',1);

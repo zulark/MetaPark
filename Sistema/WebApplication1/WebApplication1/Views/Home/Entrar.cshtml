@@ -1,7 +1,7 @@
 ﻿@using WebApplication1
 @using WebApplication1.Models
 @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
-@model Usuario
+@model List<Veiculo>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,38 +14,41 @@
 <body>
     <div id="container">
         <h1>Selecione um veículo</h1>
+        <p>@ViewBag.Ip</p>
         <table>
             <tr>
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Placa</th>
             </tr>
+                    
             <form>
 
-                @for (int i = 0; i < Usuario.VeiculosUsuario.Count; i++)
+                @for (int i = 0; i < Model.Count; i++)
                 {
-                    @if (Usuario.VeiculosUsuario[i].IdUsuario != @Model.Id)
+                        if (Model.Count == 0)
                     {
                         <label>Nenhum veículo cadastrado</label>
                     }
                     else
                     {
                     <tr>
-                        <td> @Usuario.VeiculosUsuario[i].Marca</td>
-                        <td> @Usuario.VeiculosUsuario[i].Modelo</td>
-                        <td> @Usuario.VeiculosUsuario[i].Placa</td>
+                        <td>@Model[i].Marca</td>
+                        <td>@Model[i].Modelo</td>
+                        <td>@Model[i].Placa</td>
                         <td>
-                            <a asp-action="Selecionar">Selecionar</a>
+                            <a asp-action="Selecionar" asp-route-id="@Model[i].idVeiculo">Selecionar</a>
                         </td>
                     </tr>
                     }
                 }
             </form>
+                    
 
         </table><br>
 
         <p>
-            <a class="botao botao-block" id="cadastrar" href="cadastrarVeiculo.php">Cadastrar Veículo</a><br>
+            <a class="botao botao-block" id="cadastrar" asp-action="CadastrarVeiculo">Cadastrar Veículo</a><br>
         </p>
 
     </div>
