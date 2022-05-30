@@ -37,10 +37,12 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult CadastrarVeiculo()
+        public IActionResult CadastrarVeiculo(int idUsuario)
         {
-            return View();
+            ViewBag.IdUsuario = idUsuario;
+            return View("CadastrarVeiculo");
         }
+
         /*
         public void Cadastrar_CadastrarUsuario(Usuario usuario)
         {

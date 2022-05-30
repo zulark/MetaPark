@@ -1,0 +1,36 @@
+﻿@using WebApplication1.Models
+@model Veiculo
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Veículo</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div id="container">
+        <h2>Cadastrar</h2>
+
+        <form method="POST">
+            <input asp-for="idUsuario" value="@ViewBag.IdUsuario"/>
+            <input asp-for="idVeiculo"/>
+            Marca<br>
+            <label asp-for="Marca"></label>
+            <input asp-for="Marca"/>
+
+            <label asp-for="Modelo"></label>
+            <input asp-for="Modelo"/>
+
+            <label asp-for="Placa"></label>
+            <input asp-for="Placa"/>
+            <button class="botao botao-block">Cadastrar</button><br><br>
+        </form>
+
+        <a href="index.php">Voltar</a>
+        </p>
+    </div>
+</body>
+
+</html>
