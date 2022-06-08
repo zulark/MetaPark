@@ -6,7 +6,7 @@
 }
 body {
     font-family: 'Dosis', sans-serif !important;  
-    font-weight: 600 !important;
+    font-weight: bold !important;
     overflow: hidden;
     height: 100vh;
     background-image: url('https://royalhorseshoe.com/wp-content/uploads/2017/01/wallpaper-triangles-geometry-black-minimalistic-geometric-wallpapers.jpg');
@@ -15,16 +15,38 @@ body {
     background-size: cover;
   }
 
-  form {
-    
+  .container {
+    background-color: #f2f2f2;
+    width: 30% !important;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.2rem;
+    border-radius: 5%;
   }
 
-.login-box { 
+
+form{
+  padding: 30px;
+}
+
+.buttons{
+  padding: 30px;
+}
+
+.tab-content span{
+  color: crimson;
+}
+.tab-content figcaption{ 
+  color: #666;
+  text-transform: uppercase;
+  font-size: .850rem;
+}
+
+.form-check{ 
+  font-weight: 600 !important;
+}
+/* .login-box { 
   min-width: 500px;
   padding: 50px;    
   box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
@@ -130,7 +152,6 @@ body {
   }
 
 
-/** For tablet devices **/
 @media (min-width: 768px) and (max-width: 1200px) {
   
 
@@ -138,7 +159,6 @@ body {
 
 }
 
-/** For mobile devices **/
 @media (max-width: 767px) {
     .custom-shape-divider-bottom-1652222402 svg {
         width: calc(300% + 1.3px);
@@ -149,4 +169,4 @@ body {
       font-size: 1.2em;
 
     }
-  }
+  } */
