@@ -2,7 +2,7 @@ CREATE DATABASE Estacionamento;
 USE Estacionamento;
 
 CREATE TABLE Usuario(
-	idUsuario int identity(1,1),
+	idUsuario int identity(0,1),
 	Nome varchar(50) NOT NULL,
 	Sobrenome varchar(50) NULL,
 	CPF varchar(14) NULL,
@@ -16,7 +16,7 @@ PRIMARY KEY
 )
 
 CREATE TABLE Veiculo(
-	idVeiculo int identity(1,1),
+	idVeiculo int,
 	Marca varchar(30) NOT NULL,
 	Modelo varchar(30) NOT NULL,
 	Placa varchar(8),
@@ -26,12 +26,12 @@ PRIMARY KEY (idVeiculo ASC))
 ALTER TABLE Veiculo
 ADD FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario);
 
-CREATE TABLE Entrada(
-	idAcesso int identity(1,1), 
+CREATE TABLE Acesso(
+	idAcesso int identity(0,1), 
 	idUsuario int,
 	idVeiculo int,
-	Entrada varchar(20) NOT NULL,
-	Saida varchar(20)
+	Entrada datetime NOT NULL,
+	Saida datetime
 	PRIMARY KEY (
 		idAcesso ASC
 	)
@@ -53,12 +53,12 @@ INSERT INTO Usuario VALUES ('Oliver', 'Ramos','797.620.466-17','OliverR','123456
 INSERT INTO Usuario VALUES ('Márcia', 'Nunes','068.133.269-70','marciaN','123456',1);
 INSERT INTO Usuario VALUES ('Marcos', 'Mendes','663.361.084-06','marcosM','123456',1);
 
-INSERT INTO Veiculo VALUES ('Peugeot', '206','BVQ7861',1);
-INSERT INTO Veiculo VALUES ('Kia', 'Sorento','JVT6953',1);
-INSERT INTO Veiculo VALUES ('Nissan', 'Pathfinder','JTK9749',2);
-INSERT INTO Veiculo VALUES ('Honda', 'Civic','AQA8517',3);
-INSERT INTO Veiculo VALUES ('Toyota', 'Corolla','LVT0928',4);
-INSERT INTO Veiculo VALUES ('Toyota', 'Hilux','HQC1626',4);
+INSERT INTO Veiculo VALUES (0,'Peugeot', '206','BVQ7861',0);
+INSERT INTO Veiculo VALUES (1,'Kia', 'Sorento','JVT6953',0);
+INSERT INTO Veiculo VALUES (2,'Nissan', 'Pathfinder','JTK9749',1);
+INSERT INTO Veiculo VALUES (3,'Honda', 'Civic','AQA8517',2);
+INSERT INTO Veiculo VALUES (4,'Toyota', 'Corolla','LVT0928',3);
+INSERT INTO Veiculo VALUES (5,'Toyota', 'Hilux','HQC1626',3);
 
 
 SELECT idAcesso FROM 'entrada' WHERE idUsuario = 1 and idVeiculo = 0 and Saida IS NULL;
