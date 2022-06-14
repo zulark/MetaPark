@@ -27,7 +27,7 @@ ALTER TABLE Veiculo
 ADD FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario);
 
 CREATE TABLE Acesso(
-	idAcesso int identity(0,1), 
+	idAcesso int, 
 	idUsuario int,
 	idVeiculo int,
 	Entrada datetime NOT NULL,
@@ -36,6 +36,11 @@ CREATE TABLE Acesso(
 		idAcesso ASC
 	)
 )
+
+ALTER TABLE Acesso
+ADD FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario);
+ALTER TABLE Acesso
+ADD FOREIGN KEY (idVeiculo) REFERENCES Veiculo(idVeiculo);
 
 select * from Usuario
 
