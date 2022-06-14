@@ -26,7 +26,6 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-
         public IActionResult CadastrarUsuario()
         {
             return View();
@@ -41,6 +40,26 @@ namespace WebApplication1.Controllers
         {
             ViewBag.IdUsuario = idUsuario;
             return View("CadastrarVeiculo");
+        }
+
+        public IActionResult Cadastrar_CadastrarVeiculo(Veiculo veiculo)
+        {
+            //veiculo.idUsuario = 
+            veiculo.idVeiculo = _context.Veiculo.Count();
+            _context.Veiculo.Add(veiculo);
+            _context.SaveChanges();
+            return RedirectToAction("Voltar", veiculo.idUsuario);
+        }
+
+        public IActionResult Selecionar(int idVeiculo)
+        {
+            Veiculo veiculoEncontrado = new Veiculo();
+            veiculoEncontrado = _context.Veiculo.FirstOrDefault(a => idVeiculo == a.idVeiculo);
+            if (veiculoEncontrado == null)
+            {
+                return View("Erro", "Erro no processamento");
+            }
+            return View("AcessoConfirmado");
         }
 
         /*
@@ -58,6 +77,29 @@ namespace WebApplication1.Controllers
             }
         }*/
 
+        public IActionResult Voltar(int idUsuario)
+        {
+            Veiculo veiculoEncontrado = new Veiculo();
+            veiculoEncontrado = _context.Veiculo.FirstOrDefault(a => idUsuario == a.idUsuario);
+            if(veiculoEncontrado == null)
+            {
+                return View("Erro", "Erro no processamento, realize o login novamente");
+            }
+
+            List<Veiculo> veiculos = _context.Veiculo.ToList();
+            List<Veiculo> veiculosEncontrados = new List<Veiculo>();
+            for (int i = 0; i < _context.Veiculo.Count(); i++)
+            {
+                if (veiculos[i].idUsuario == idUsuario)
+                {
+                    veiculosEncontrados.Add(veiculos[i]);
+                }
+            }
+            //ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
+            //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+            return View("Entrar", veiculosEncontrados);
+        }
+
         public IActionResult Entrar(Usuario usuario)
         {            
             Usuario usuarioEncontrado = new Usuario();
@@ -73,8 +115,8 @@ namespace WebApplication1.Controllers
                         veiculosEncontrados.Add(veiculos[i]);
                     }
                 }
-                ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
-                    //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+                //ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
+                //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
                 return View("Entrar", veiculosEncontrados);
             }
             if(usuarioEncontrado == null)
