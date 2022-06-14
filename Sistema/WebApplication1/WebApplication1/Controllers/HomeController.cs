@@ -59,6 +59,10 @@ namespace WebApplication1.Controllers
             {
                 return View("Erro", "Erro no processamento");
             }
+            Acesso acesso = new Acesso();
+            acesso.idUsuario = veiculoEncontrado.idUsuario;
+            acesso.idVeiculo = veiculoEncontrado.idVeiculo;
+            acesso.idAcesso = _context.Acesso.Count();
             return View("AcessoConfirmado");
         }
 
