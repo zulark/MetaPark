@@ -5,6 +5,7 @@
   padding: 0;
 }
 body {
+
     font-family: 'Dosis', sans-serif !important;  
     height: 100vh;
     background-image: url('https://royalhorseshoe.com/wp-content/uploads/2017/01/wallpaper-triangles-geometry-black-minimalistic-geometric-wallpapers.jpg');
@@ -25,19 +26,20 @@ form {
 font-weight: 600 !important;
 min-width: 500px;
 padding: 50px;    
+padding-bottom: 10px;
 box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
 border-radius: 10px;
-background-color: #444;
+background-color: #f2f2f2;
 text-align: center;
 display: flex;
 flex-direction: column;
+border-radius: 20px;
 
 }
 
 #title { 
-  color: #fff;
+  color: #333;
   text-transform: uppercase;
-  font-weight: bold;
 }
   #title span{
       color: crimson;
@@ -45,12 +47,12 @@ flex-direction: column;
 
   
   label {
-    color: #fff;
+    color: #333;
     font-size: .900rem;
     margin-top: 20px !important;
     margin-bottom: 5px !important;
     font-weight: 600;
-    text-align: left;
+    text-align: center;
   }
   input {
     -webkit-appearance: none;
@@ -67,63 +69,32 @@ flex-direction: column;
     text-align: center;
 
   }
-  .other-options {
-    
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;    
-    margin-top: 10px;
-    transition: .2s;
-    }
-    .other-options:hover{ 
-     color: crimson !important;
-    }
 
-    .remember-me{ 
-      margin-bottom: 10px;
-    }
-    .remember-me label {
-        font-size: 1rem;
-    }
-    .remember-me {
-        float: left;
-    }
-  
-  input[type="checkbox"] {
-    -webkit-appearance: checkbox;
-       -moz-appearance: checkbox;
-            appearance: checkbox;
-    display: inline-block;
-    width: auto;
-  }
-  
-  input[type="password"] {
-    margin-bottom: .5rem;
-  }
+
   #email { 
       outline: none;
   }
   input[type="submit"] {
-    background-color: crimson !important;
+    background-color: rgb(76, 120, 240) !important;
     border: none;
     color: #fff;
     font-size: 1.2rem;
     padding: .5rem 1rem;
     transition: .2s;
     font-weight: 500;
-    margin-top: 15px;
+    margin-top: 50px;
+    bottom: 0;
+
   }
 
   input[type="submit"]:hover{
-    background-color: rgb(167, 14, 44) !important;
-    
+    background-color: rgb(84, 82, 236) !important;
+
   }
 
   
   #info {
-      color: #f2f2f2 !important;
+      color: rgb(80, 71, 71) !important;
       font-size: .9rem;
       font-weight: 500;
       margin-top: 10px;
@@ -133,3 +104,7 @@ flex-direction: column;
       color: #fff !important;
   }
  
+  .botao a{
+    float: left;
+    color: rgb(80, 71, 71);
+  }
