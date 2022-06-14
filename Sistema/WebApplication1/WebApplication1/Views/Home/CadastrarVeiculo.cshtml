@@ -15,8 +15,7 @@
 
         <form method="POST">
             <input asp-for="idUsuario" value="@ViewBag.IdUsuario"/>
-            <input asp-for="idVeiculo"/>
-            Marca<br>
+            
             <label asp-for="Marca"></label>
             <input asp-for="Marca"/>
 
@@ -25,11 +24,11 @@
 
             <label asp-for="Placa"></label>
             <input asp-for="Placa"/>
-            <button class="botao botao-block">Cadastrar</button><br><br>
+            <button class="botao botao-block" asp-action="Cadastrar_CadastrarVeiculo">Cadastrar</button><br><br>
         </form>
 
-        <a href="index.php">Voltar</a>
-        </p>
+        <a asp-action="Voltar" asp-route-idUsuario="@ViewBag.IdUsuario">Voltar</a>
+        
     </div>
 </body>
 
