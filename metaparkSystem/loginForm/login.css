@@ -6,16 +6,29 @@
   
 }
 body {
+    height: 100vh;
+    background-image: linear-gradient(to top, #444, #999);
     font-family: 'Dosis', sans-serif !important;  
     font-weight: bold !important;
-    /* background-image: url('../../metaparkWeb/bg/bg.jpg');  */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
 html{
-  background-color: #f2f2f2;
 
+}
+.boxLogin {
+  background-color: #f2f2f2;
+  border-radius: 15px;
+  color: #000;
+}
+
+.aRed {
+  color: crimson !important;
+}
+#termos{ 
+  padding-left: 100px;
+  padding-right: 100px;
 }
   .container {
     position: absolute;
@@ -37,7 +50,8 @@ html{
   cursor: pointer;
 }
 .buttons{
-  padding: 30px;
+  padding: 20px;
+  padding-bottom: 0;
  
 }
 .buttons .nav-item a {
