@@ -190,6 +190,24 @@
         e.preventDefault();
     });
 </script>
+
+<!-- Confirm password -->
+<script>
+var senha = document.getElementById("registerPassword")
+  , confirm_password = document.getElementById("registerRepeatPassword");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Senhas não coincidem");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+
 </body>
 
 </html>
