@@ -10,9 +10,6 @@ body {
     background-color: #f2f2f2 !important;
     font-family: 'Dosis', sans-serif !important;  
     font-weight: bold !important;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 
 form {
@@ -27,7 +24,6 @@ form {
 }
 
 .login-box { 
-font-weight: 600 !important;
 padding: 50px;    
 padding-bottom: 10px;
 border-radius: 10px;
@@ -43,36 +39,6 @@ border-radius: 20px;
 }
   #title span{
       color: crimson;
-  }
-
-  
-  label {
-    color: #333;
-    font-size: .900rem;
-    margin-top: 20px !important;
-    margin-bottom: 5px !important;
-    font-weight: 600;
-    text-align: center;
-  }
-  input {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    border: 1px solid #ccc;
-    border-radius: .1875rem;
-    box-sizing: border-box;
-    display: block;
-    font-size: .875rem;
-    margin-bottom: 1rem;
-    padding: .275rem;
-    width: 100%;
-    text-align: center;
-
-  }
-
-
-  #email { 
-      outline: none;
   }
 
   hr{

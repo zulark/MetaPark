@@ -6,28 +6,18 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #f2f2f2 !important;
+    background-color: #f2f2f2 !important;
     font-family: 'Dosis', sans-serif !important;  
     font-weight: bold !important;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
   }
-#loginCheck {
-  background-color: crimson !important;
-}
 .boxLogin {
   background-color: #f2f2f2;
   border-radius: 15px;
   color: #000;
 }
 
-.aRed {
-  color: crimson !important;
-}
-#termos{ 
-  padding-left: 100px;
-  padding-right: 100px;
+#termosL{
+  display: block;
 }
   .container {
     position: absolute;
@@ -49,7 +39,9 @@ body {
   cursor: pointer;
 }
 .buttons{
-  padding: 20px;
+  width: 75%;
+  justify-content: center;
+  margin: 0 auto;
   padding-bottom: 0;
  
 }
