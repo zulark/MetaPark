@@ -3,15 +3,13 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
-    font-family: 'Dosis', sans-serif !important;  
     height: 100vh;
-    background-image: url('https://royalhorseshoe.com/wp-content/uploads/2017/01/wallpaper-triangles-geometry-black-minimalistic-geometric-wallpapers.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    overflow-x: hidden;
+    background-color: #f2f2f2 !important;
+    font-family: 'Dosis', sans-serif !important;  
+    font-weight: bold !important;
   }
 
 form {
@@ -21,115 +19,33 @@ form {
   transform: translate(-50%, -50%);
 }
 
+.form-control {
+  background-color: #fff !important;
+}
+
 .login-box { 
-font-weight: 600 !important;
-min-width: 500px;
 padding: 50px;    
-box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+padding-bottom: 10px;
 border-radius: 10px;
-background-color: #444;
+background-color: #f2f2f2;
 text-align: center;
-display: flex;
-flex-direction: column;
+border-radius: 20px;
 
 }
 
 #title { 
-  color: #fff;
+  color: #333;
   text-transform: uppercase;
-  font-weight: bold;
 }
   #title span{
       color: crimson;
-  }
-
-  
-  label {
-    color: #fff;
-    font-size: .900rem;
-    margin-top: 20px !important;
-    margin-bottom: 5px !important;
-    font-weight: 600;
-    text-align: left;
-  }
-  input {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    border: 1px solid #ccc;
-    border-radius: .1875rem;
-    box-sizing: border-box;
-    display: block;
-    font-size: .875rem;
-    margin-bottom: 1rem;
-    padding: .275rem;
-    width: 100%;
-    text-align: center;
-
-  }
-  .other-options {
-    
-    text-decoration: none;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;    
-    margin-top: 10px;
-    transition: .2s;
-    }
-    .other-options:hover{ 
-     color: crimson !important;
-    }
-
-    .remember-me{ 
-      margin-bottom: 10px;
-    }
-    .remember-me label {
-        font-size: 1rem;
-    }
-    .remember-me {
-        float: left;
-    }
-  
-  input[type="checkbox"] {
-    -webkit-appearance: checkbox;
-       -moz-appearance: checkbox;
-            appearance: checkbox;
-    display: inline-block;
-    width: auto;
-  }
-  
-  input[type="password"] {
-    margin-bottom: .5rem;
-  }
-  #email { 
-      outline: none;
-  }
-  input[type="submit"] {
-    background-color: crimson !important;
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: .5rem 1rem;
-    transition: .2s;
-    font-weight: 500;
-    margin-top: 15px;
-  }
-
-  input[type="submit"]:hover{
-    background-color: rgb(167, 14, 44) !important;
-    
-  }
-
-  
-  #info {
-      color: #f2f2f2 !important;
-      font-size: .9rem;
-      font-weight: 500;
-      margin-top: 10px;
   }
 
   hr{
       color: #fff !important;
   }
  
+  .botao a{
+    float: left;
+    color: rgb(80, 71, 71);
+  }
