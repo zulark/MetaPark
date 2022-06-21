@@ -10,7 +10,7 @@ namespace WebApplication1.Models
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=SNCCH01LABF102\SQLEXPRESS;Database=Estacionamento;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=SNCCH01LABF118\TEW_SQLEXPRESS;Database=Estacionamento;Trusted_Connection=True;");
         }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)

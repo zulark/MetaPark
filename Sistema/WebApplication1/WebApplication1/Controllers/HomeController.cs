@@ -62,7 +62,13 @@ namespace WebApplication1.Controllers
             Acesso acesso = new Acesso();
             acesso.idUsuario = veiculoEncontrado.idUsuario;
             acesso.idVeiculo = veiculoEncontrado.idVeiculo;
-            acesso.idAcesso = _context.Acesso.Count();
+            acesso.idAcesso = _context.Acesso.Count()+1;
+            ViewBag.idUsuario = acesso.idUsuario;
+            acesso.Entrada = DateTime.Now;
+            acesso.Saida = DateTime.Parse("1900/1/1 00:00");
+
+            _context.Acesso.Add(acesso);
+            _context.SaveChanges();
             return View("AcessoConfirmado");
         }
 
@@ -80,6 +86,28 @@ namespace WebApplication1.Controllers
                 Response.Redirect("Login");
             }
         }*/
+
+        public IActionResult BuscaAcesso(int idUsuario)
+        {
+            Acesso acessoEncontrado = new Acesso();
+            DateTime saida = DateTime.Parse("1900/1/1 00:00");
+            acessoEncontrado = _context.Acesso.FirstOrDefault(a => a.idUsuario == idUsuario && a.Saida == saida);
+            if(acessoEncontrado == null)
+            {
+                return View("Erro", "Erro no processamento");
+            }
+            return RedirectToAction("ConfirmarSaida", acessoEncontrado);
+        }
+
+        public IActionResult ConfirmarSaida(Acesso acessoEncontrado)
+        {
+            Acesso acesso = acessoEncontrado;
+            acesso.Saida = DateTime.Now;
+
+            _context.Entry(acessoEncontrado).CurrentValues.SetValues(acesso);
+            _context.SaveChanges();
+            return View();
+        }
 
         public IActionResult Voltar(int idUsuario)
         {

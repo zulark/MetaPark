@@ -2,4 +2,8 @@
     Layout = null;
 }
 
-<p>Pagamento confirmado</p>
+<p>Cancela aberta</p>
+
+<p>@ViewBag.idUsuario</p>
+
+<a asp-action="BuscaAcesso" asp-route-idAcesso="@ViewBag.idUsuario">Saida</a>

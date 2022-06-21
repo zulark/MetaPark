@@ -39,10 +39,22 @@ CREATE TABLE Acesso(
 
 ALTER TABLE Acesso
 ADD FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario);
+
 ALTER TABLE Acesso
 ADD FOREIGN KEY (idVeiculo) REFERENCES Veiculo(idVeiculo);
 
+CREATE TABLE Carteira(
+	idCarteira int,
+	idUsuario int,
+	saldo decimal
+PRIMARY KEY (idCarteira ASC))
+
+ALTER TABLE Carteira
+ADD FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario);
+
 select * from Usuario
+
+select * from Acesso
 
 select * from Veiculo
 
