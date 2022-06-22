@@ -13,6 +13,9 @@
 
 <body>
     <div id="container">
+        <p>Saldo na carteira</p>
+        <p>@ViewBag.Saldo</p>
+        <a asp-action="HomeCarteira" asp-route-idUsuario="@Model[0].idUsuario">Recarregar créditos</a>
         <h1>Selecione um veículo</h1>
         <p>@ViewBag.Ip</p>
         <table>
