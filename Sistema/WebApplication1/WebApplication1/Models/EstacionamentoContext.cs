@@ -7,6 +7,7 @@ namespace WebApplication1.Models
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Veiculo> Veiculo { get; set; }
         public DbSet<Acesso> Acesso { get; set; }
+        public DbSet<Carteira> Carteira { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -16,10 +17,16 @@ namespace WebApplication1.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
+                .Entity<Carteira>(
+                    eb => { 
+                        eb.HasKey(v => v.idCarteira); });
+            
+            modelBuilder
                 .Entity<Acesso>(
                     eb => {
                         eb.HasKey(v => v.idAcesso);
                     });
+            
             modelBuilder
                 .Entity<Veiculo>(
                     eb =>
@@ -28,6 +35,7 @@ namespace WebApplication1.Models
                         //eb.ToView("View_BlogPostCounts");
                        //eb.Property(v => v.Modelo).HasColumnName("Name");
                     });
+            
             modelBuilder.Entity<Usuario>(eb =>
             {
                 eb.HasNoKey();

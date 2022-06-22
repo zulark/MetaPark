@@ -46,7 +46,7 @@ ADD FOREIGN KEY (idVeiculo) REFERENCES Veiculo(idVeiculo);
 CREATE TABLE Carteira(
 	idCarteira int,
 	idUsuario int,
-	saldo decimal
+	saldo decimal(4,2)
 PRIMARY KEY (idCarteira ASC))
 
 ALTER TABLE Carteira
@@ -57,6 +57,8 @@ select * from Usuario
 select * from Acesso
 
 select * from Veiculo
+
+select * from Carteira
 
 INSERT INTO Usuario VALUES ('Natália', 'Barros','023.706.406-50','nataliab', '123456', 1);
 INSERT INTO Usuario VALUES ('Noah', 'Barros','317.559.841-20','noahB','123456',1);
@@ -77,5 +79,6 @@ INSERT INTO Veiculo VALUES (3,'Honda', 'Civic','AQA8517',2);
 INSERT INTO Veiculo VALUES (4,'Toyota', 'Corolla','LVT0928',3);
 INSERT INTO Veiculo VALUES (5,'Toyota', 'Hilux','HQC1626',3);
 
+INSERT INTO Carteira VALUES (0,0,53.21);
 
 SELECT idAcesso FROM 'entrada' WHERE idUsuario = 1 and idVeiculo = 0 and Saida IS NULL;

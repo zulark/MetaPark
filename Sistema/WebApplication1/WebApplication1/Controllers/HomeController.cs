@@ -96,17 +96,34 @@ namespace WebApplication1.Controllers
             {
                 return View("Erro", "Erro no processamento");
             }
-            return RedirectToAction("ConfirmarSaida", acessoEncontrado);
-        }
-
-        public IActionResult ConfirmarSaida(Acesso acessoEncontrado)
-        {
-            Acesso acesso = acessoEncontrado;
+            Acesso acesso = new Acesso();
+            acesso = acessoEncontrado;
             acesso.Saida = DateTime.Now;
-
             _context.Entry(acessoEncontrado).CurrentValues.SetValues(acesso);
             _context.SaveChanges();
+            double tempoPermanencia = acesso.Saida.Subtract(acessoEncontrado.Entrada).TotalMinutes;
+            ViewBag.TempoPermanencia = TimeSpan.FromMinutes(Convert.ToDouble(tempoPermanencia)).ToString(@"hh\:mm\:ss");
+            ViewBag.ValorAPagar = ((int)tempoPermanencia / 10 * 2).ToString("C");
+            return View("ConfirmarSaida");
+        }
+
+        public IActionResult HomeCarteira(int idUsuario)
+        {
+            decimal saldo;
+            try
+            {
+                saldo = GetSaldo(idUsuario);
+                ViewBag.idUsuario = idUsuario;
+                ViewBag.Saldo = saldo.ToString("C");
+
             return View();
+
+            }catch(Exception e)
+            {
+                e.ToString();
+                return View("HomeCarteira");
+            }
+
         }
 
         public IActionResult Voltar(int idUsuario)
@@ -163,6 +180,15 @@ namespace WebApplication1.Controllers
             return View("Listar",_context.Usuario.ToList());
         }
 
+        public decimal GetSaldo(int idUsuario)
+        {
+            Carteira carteiraEncontrada = _context.Carteira.FirstOrDefault(a => a.idUsuario == idUsuario);
+            if (carteiraEncontrada == null)
+            {
+                throw new Exception();
+            }
+            return Convert.ToDecimal(_context.Entry(carteiraEncontrada).Property("saldo").CurrentValue);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
