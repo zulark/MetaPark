@@ -1,0 +1,46 @@
+CREATE DATABASE SistemaFinanceiro;
+USE SistemaFinanceiro;
+
+CREATE TABLE Pagamentos(
+	Id int identity(1,1),
+	Descricao varchar(50) NOT NULL,
+	Valor decimal(10,2) NOT NULL,
+	CodBarras varchar(48) NOT NULL,
+	DataVencimento date NOT NULL,
+	DataPagamento date,
+	Pago bit NOT NULL,
+	Ativo bit NOT NULL,
+PRIMARY KEY 
+(
+	Id ASC
+) 
+)
+
+select * from Pagamentos
+
+select * from Pagamentos where Descricao = HASHBYTES('MD5','abc');
+
+INSERT INTO Pagamentos VALUES ('Energia', 209.45,'1234567891123456789123456781912345678912','2022-05-17', '2022-05-15', 1,1);
+INSERT INTO Pagamentos VALUES ('Água', 85.00 ,'2234567891123456789123456781912345678912','2022-05-17','',0,1);
+INSERT INTO Pagamentos VALUES ('Internet', 119.20,'3234567891123456789123456781912345678912','2022-05-17','2022-05-17',1,1);
+INSERT INTO Pagamentos VALUES ('Casa', 1109.20,'4234567891123456789123456781912345678912','2022-05-13','',0,1);
+
+INSERT INTO Pagamentos VALUES ('Energia', 209.45,'5234567891123456789123456781912345678912','2022-04-17', '2022-04-15', 1,1);
+INSERT INTO Pagamentos VALUES ('Água', 85.00 ,'6234567891123456789123456781912345678912','2022-04-17','2022-04-17',0,1);
+INSERT INTO Pagamentos VALUES ('Internet', 119.20,'7234567891123456789123456781912345678912','2022-04-17','2022-04-17',0,1);
+INSERT INTO Pagamentos VALUES ('Casa', 1109.20,'8234567891123456789123456781912345678912','2022-04-13','2022-04-13',0,1);
+
+INSERT INTO Pagamentos VALUES ('Energia', 209.45,'9234567891123456789123456781912345678912','2022-03-17', '2022-03-15', 1,1);
+INSERT INTO Pagamentos VALUES ('Água', 85.00 ,'2534567891123456789123456781912345678912','2022-03-17','2022-03-17',0,1);
+INSERT INTO Pagamentos VALUES ('Internet', 119.20,'3534567891123456789123456781912345678912','2022-03-17','2022-03-17',0,1);
+INSERT INTO Pagamentos VALUES ('Casa', 1109.20,'6534567891123456789123456781912345678912','2022-03-13','',0,1);
+
+Update Pagamentos set Ativo = 1 Where id=7
+Update Pagamentos set Ativo = 1 Where id=10
+Update Pagamentos set Ativo = 1 Where id=11
+Update Pagamentos set Ativo = 1 Where id=13
+Update Pagamentos set Ativo = 1 Where id=14
+Update Pagamentos set Ativo = 1 Where id=16
+
+
+select Descricao from Pagamentos where MONTH(DataVencimento) = 5

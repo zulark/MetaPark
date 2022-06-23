@@ -1,0 +1,250 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Pagamento>
+
+<div class="container-fluid">
+
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!--
+
+            Bloco de informações
+
+            Quantidade de pagamentos
+            Quantidade de pagamentos vencidos
+            Valor total de pagamentos
+
+
+        -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Quantidade total de pagamentos
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.QuantidadeTotalPagos</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Quantidade de pagamentos a vencer
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.AVencer</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-exclamation fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                Quantidade de pagamentos vencidos não pagos
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.PagamentosVencidos</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa fa-times fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Valor total de pagamentos
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">R$ @ViewBag.TotalPago</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="meses">
+        <label id="Jan" hidden>@ViewBag.Jan</label>
+        <label id="Fev" hidden>@ViewBag.Fev</label>
+        <label id="Mar" hidden>@ViewBag.Mar</label>
+        <label id="Abr" hidden>@ViewBag.Abr</label>
+        <label id="Mai" hidden>@ViewBag.Mai</label>
+        <label id="Jun" hidden>@ViewBag.Jun</label>
+        <label id="Jul" hidden>@ViewBag.Jul</label>
+        <label id="Ago" hidden>@ViewBag.Ago</label>
+        <label id="Set" hidden>@ViewBag.Set</label>
+        <label id="Out" hidden>@ViewBag.Out</label>
+        <label id="Nov" hidden>@ViewBag.Nov</label>
+        <label id="Dez" hidden>@ViewBag.Dez</label>
+    </div>
+    <!-- Content Row -->
+
+    <div class="row">
+
+        <!-- Area Chart
+        col-xl-4 col-md-6 mb-4"
+        -->
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Total pago</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="myAreaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-12">
+
+
+            <!-- Page Heading -->
+            <!-- DataTales
+                Tabela de pagamentos
+                Example -->
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="dataTable" class="dataTables table-bordered" style="width:100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                    <th>Código de barras</th>
+                                    <th>Data de vencimento</th>
+                                    <th>Data de pagamento</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Descrição</th>
+                                    <th>Valor</th>
+                                    <th>Código de barras</th>
+                                    <th>Data de vencimento</th>
+                                    <th>Data de pagamento</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                @foreach (var pagamentos in Model)
+                                {
+                                    @if (pagamentos.Ativo)
+                                    {
+                                        @if (pagamentos.Pago)
+                                        {
+                                            <tr class="boleto-vencido alert alert-success">
+                                                <td>@pagamentos.Id</td>
+                                                <td>@pagamentos.Descricao</td>
+                                                <td class="preco">@pagamentos.Valor</td>
+                                                <td>@pagamentos.CodBarras</td>
+                                                <td>@pagamentos.DataVencimento.ToShortDateString()</td>
+                                                <td>@pagamentos.DataPagamento.ToShortDateString()</td>
+                                                <td class="options">
+                                                </td>
+
+                                            </tr>
+                                        }
+                                        else
+                                        {
+                                            <tr class="boleto-vencido">
+                                                <td>@pagamentos.Id</td>
+                                                <td>@pagamentos.Descricao</td>
+                                                <td class="preco">@pagamentos.Valor</td>
+                                                <td>@pagamentos.CodBarras</td>
+                                                <td>@pagamentos.DataVencimento.ToShortDateString()</td>
+                                                <td>-----</td>
+                                                <th class="options">
+                                                    <!-- confirmar pagamento -->
+                                        <a asp-action="Pagar" asp-route-id="@pagamentos.Id" class="btn btn-success btn-circle">
+                                                        <i class="fas fa-check"></i>
+                                                    </a>
+                                                    <!-- editar pagamento -->
+                                        <a asp-action="Editar" asp-route-id="@pagamentos.Id" class="btn btn-primary btn-circle">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <!-- excluir pagamento -->
+                                        <div class="options">
+                                                        <a class="btn btn-danger btn-circle" asp-route-id="@pagamentos.Id" onclick="getId(@pagamentos.Id)" data-toggle="modal" data-id="@pagamentos.Id" data-target="#exampleModalCenter">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+
+                                                        <!-- Modal -->
+                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLongTitle">Atenção</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Tem certeza que deseja excluir este pagamento?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <form method="post">
+                                                                            <button type="submit" asp-route-id="@pagamentos.Id" onclick="getId(@pagamentos.Id)" data-id="@pagamentos.Id" id="excluir-model" class="btn btn-danger">Excluir</button>
+                                                                        </form>
+                                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Button trigger modal -->
+                                    </th>
+                                            </tr>
+                                        }
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
