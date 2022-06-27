@@ -19,134 +19,136 @@
   <div class="container">
     <div class="row align-items-center justify-content-center">
       <div class="col-xl-6 col-md-10">
-<div class="boxLogin"> 
-    <!-- Pills navs -->
-    <div class="buttons">
-      <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
-            aria-controls="pills-login" aria-selected="true">Entrar</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
-            aria-controls="pills-register" aria-selected="false">Registrar</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Pills navs -->
+        <div class="boxLogin">
 
-    <!-- Pills content -->
-    <div class="tab-content">
-      <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-        <form method="post" action="../">
-          <div class="text-center mb-3">
-            <h1><span>M</span>ETA<span>P</span>ARK</h1>
-          </div>
-          <p class="text-center">Entrar</p>
+          <!-- Pills content -->
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+              <form method="post" action="../">
+                <div class="text-center mb-3">
+                  <h1><span>M</span>ETA<span>P</span>ARK</h1>
+                </div>
+                <p class="text-center">Entrar</p>
 
 
-          <!-- Email input -->
-          <div class="form-outline mb-4 w-75 mx-auto">
-            <input type="email" id="loginName" class="form-control" />
-            <label class="form-label" for="loginName">Email</label>
-          </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4 w-75 mx-auto">
+                  <input type="email" id="loginName" class="form-control" />
+                  <label class="form-label" for="loginName">Email</label>
+                </div>
 
-          <!-- Password input -->
-          <div class="form-outline mb-4 w-75 mx-auto">
-            <input type="password" id="loginPassword" class="password form-control" />
-            <label class="form-label" for="loginPassword">Senha</label>
-            <i class="bi bi-eye-slash" id="togglePasswordSignIn"></i>
-          </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4 w-75 mx-auto">
+                  <input type="password" id="loginPassword" class="password form-control" />
+                  <label class="form-label" for="loginPassword">Senha</label>
+                  <i class="bi bi-eye-slash" id="togglePasswordSignIn"></i>
+                </div>
 
-          <!-- 2 column grid layout -->
-          <div class="row mb-4">
-            <div class="col-md-6 d-flex justify-content-center">
-              <!-- Checkbox -->
-              <div class="form-check mb-3 mb-md-0">
-                <input class="form-check-input" type="checkbox" value="" id="loginCheck"/>
-                <label class="form-check-label" for="loginCheck"> Lembrar senha </label>
-              </div>
+                <!-- 2 column grid layout -->
+                <div class="row mb-4">
+                  <div class="col-md-6 d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check mb-3 mb-md-0">
+                      <input class="form-check-input" type="checkbox" value="" id="loginCheck" />
+                      <label class="form-check-label" for="loginCheck"> Lembrar senha </label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 d-flex justify-content-center">
+                    <!-- Simple link -->
+                    <a href="../recoverPassword/recover.html">Esqueceu a senha?</a>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-dark btn-block mb-5 w-75"
+                    onclick="window.location.href= '../dashboard/template/index.html' ">Entrar </button>
+                </div>
+
+              </form>
             </div>
+            <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+              <form action="../Dashboard/sistema-controle-financeiro/template/index.html">
+                <div class="text-center mb-3">
+                  <h1><span>M</span>ETA<span>P</span>ARK</h1>
+                </div>
 
-            <div class="col-md-6 d-flex justify-content-center">
-              <!-- Simple link -->
-              <a href="../recoverPassword/recover.html">Esqueceu a senha?</a>
+
+                <p class="text-center">Criar conta</p>
+
+                <!-- Name input -->
+                <div class="form-outline mb-4 w-75 mx-auto">
+
+                  <input type="text" id="registerName" class="form-control" required />
+                  <label class="form-label" for="registerName"> <span>*</span>Nome</label>
+                </div>
+
+                <!-- Username input -->
+                <div class="form-outline mb-4 w-75 mx-auto">
+                  <input type="text" id="registerUsername" class="form-control" required />
+                  <label class="form-label" for="registerUsername"> <span>*</span>Sobrenome</label>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4 w-75 mx-auto">
+                  <input type="email" id="registerEmail" class="form-control" required />
+                  <label class="form-label" for="registerEmail"> <span>*</span>Email</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="password  form-outline mb-4 w-75 mx-auto">
+                  <input type="password" id="registerPassword" class="form-control" required />
+                  <label class="form-label" for="registerPassword"> <span>*</span>Senha</label>
+                  <i class="bi bi-eye-slash" id="togglePassword"></i>
+
+                </div>
+
+                <!-- Repeat Password input -->
+                <div class="password form-outline mb-4 w-75 mx-auto">
+                  <input type="password" id="registerRepeatPassword" class="form-control" required />
+                  <label class="form-label" for="registerRepeatPassword"> <span>*</span>Confirme a senha</label>
+                  <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input class="form-check-input" type="checkbox" value="" id="registerCheck" re
+                    aria-describedby="registerCheckHelpText" required />
+                  <label id="termosL" class="form-check-label" for="registerCheck">
+                    <span>*</span>
+                    Declaro que li e estou ciente dos <a class="aRed" href="#">Termos de privacidade</a> da METAPARK.
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+                <div class="d-flex justify-content-center">
+
+                  <button type="submit" class="btn btn-dark btn-block mb-4 w-75">Entrar</button>
+                </div>
+              </form>
             </div>
           </div>
-
-          <div class="d-flex justify-content-center">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-dark btn-block mb-5 w-75"  onclick="window.location.href= '../Dashboard/sistema-controle-financeiro/template/index.html' ">Entrar </button>
+          <!-- Pills navs -->
+          <div class="buttons">
+            <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+                  aria-controls="pills-login" aria-selected="true">Entrar</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+                  aria-controls="pills-register" aria-selected="false">Registrar</a>
+              </li>
+            </ul>
           </div>
-        
-        </form>
-      </div>
-      <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-        <form action="../Dashboard/sistema-controle-financeiro/template/index.html">
-          <div class="text-center mb-3">
-            <h1><span>M</span>ETA<span>P</span>ARK</h1>
-          </div>
+          <!-- Pills navs -->
 
-
-          <p class="text-center">Criar conta</p>
-
-          <!-- Name input -->
-          <div class="form-outline mb-4 w-75 mx-auto">
-            
-            <input type="text" id="registerName" class="form-control" required/>
-            <label class="form-label" for="registerName">     <span>*</span>Nome</label>
-          </div>
-
-          <!-- Username input -->
-          <div class="form-outline mb-4 w-75 mx-auto">
-            <input type="text" id="registerUsername" class="form-control" required/>
-            <label class="form-label" for="registerUsername">     <span>*</span>Sobrenome</label>
-          </div>
-
-          <!-- Email input -->
-          <div class="form-outline mb-4 w-75 mx-auto">
-            <input type="email" id="registerEmail" class="form-control" required/>
-            <label class="form-label" for="registerEmail">     <span>*</span>Email</label>
-          </div>
-
-          <!-- Password input -->
-          <div class="password  form-outline mb-4 w-75 mx-auto">
-            <input type="password" id="registerPassword" class="form-control" required/>
-            <label class="form-label" for="registerPassword">     <span>*</span>Senha</label>
-            <i class="bi bi-eye-slash" id="togglePassword"></i>
-            
-          </div>
-
-          <!-- Repeat Password input -->
-          <div class="password form-outline mb-4 w-75 mx-auto">
-            <input type="password" id="registerRepeatPassword" class="form-control" required/>
-            <label class="form-label" for="registerRepeatPassword">     <span>*</span>Confirme a senha</label>
-            <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
-          </div>
-
-          <!-- Checkbox -->
-          <div class="form-check d-flex justify-content-center mb-4">
-            <input class="form-check-input" type="checkbox" value="" id="registerCheck" re
-              aria-describedby="registerCheckHelpText" required/>
-            <label id="termosL" class="form-check-label" for="registerCheck">
-              <span>*</span>
-              Declaro que li e estou ciente dos <a class="aRed" href="#">Termos de privacidade</a> da METAPARK.
-            </label>
-          </div>
-
-          <!-- Submit button -->
-          <div class="d-flex justify-content-center">
-
-            <button type="submit" class="btn btn-dark btn-block mb-4 w-75">Entrar</button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
+
   </div>
-</div>
-</div>
-
-</div>
 
 
   <!-- Pills content -->
@@ -162,53 +164,53 @@
     const togglePasswordSignIn = document.querySelector("#togglePasswordSignIn");
 
     togglePassword.addEventListener("click", function () {
-        // toggle the type attribute
-        const type = password.getAttribute("type") === "password" ? "text" : "password";
-        password.setAttribute("type", type);
-        
-        // toggle the icon
-        this.classList.toggle("bi-eye");
+      // toggle the type attribute
+      const type = password.getAttribute("type") === "password" ? "text" : "password";
+      password.setAttribute("type", type);
+
+      // toggle the icon
+      this.classList.toggle("bi-eye");
     });
     toggleConfirmPassword.addEventListener("click", function () {
-        // toggle the type attribute
-        const type = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
-        confirmPassword.setAttribute("type", type);
-        
-        // toggle the icon
-        this.classList.toggle("bi-eye");
+      // toggle the type attribute
+      const type = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
+      confirmPassword.setAttribute("type", type);
+
+      // toggle the icon
+      this.classList.toggle("bi-eye");
     });
     togglePasswordSignIn.addEventListener("click", function () {
-        // toggle the type attribute
-        const type = passwordSignIn.getAttribute("type") === "password" ? "text" : "password";
-        passwordSignIn.setAttribute("type", type);
-        
-        // toggle the icon
-        this.classList.toggle("bi-eye");
+      // toggle the type attribute
+      const type = passwordSignIn.getAttribute("type") === "password" ? "text" : "password";
+      passwordSignIn.setAttribute("type", type);
+
+      // toggle the icon
+      this.classList.toggle("bi-eye");
     });
 
     // prevent form submit
     const form = document.querySelector("form");
     form.addEventListener('submit', function (e) {
-        e.preventDefault();
+      e.preventDefault();
     });
-</script>
+  </script>
 
-<!-- Confirm password -->
-<script>
-var senha = document.getElementById("registerPassword")
-  , confirm_password = document.getElementById("registerRepeatPassword");
+  <!-- Confirm password -->
+  <script>
+    var senha = document.getElementById("registerPassword")
+      , confirm_password = document.getElementById("registerRepeatPassword");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Senhas não coincidem");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
+    function validatePassword() {
+      if (password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Senhas não coincidem");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
-</script>
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+  </script>
 
 </body>
 
