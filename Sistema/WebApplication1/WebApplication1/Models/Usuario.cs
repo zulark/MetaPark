@@ -9,6 +9,8 @@
         public string Login { get; set; }
         public string Senha { get; set; }
         public bool Ativo { get; set; }
+
+        public decimal Saldo { get; set; }
         public ICollection<Veiculo> Veiculo { get; set; }
         /*
         public static List<Usuario> listagem = new List<Usuario>();

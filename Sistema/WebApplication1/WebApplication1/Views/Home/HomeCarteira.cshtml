@@ -6,4 +6,9 @@
 }
 
 <p>@ViewBag.Saldo</p>
-<a asp-action="Voltar" asp-route-idUsuario="@ViewBag.idUsuario">Voltar</a>
+<form method="post">
+    <label>Qual valor deseja adicionar?</label>
+    <input type="number" step=".01" placeholder="valor"/>
+    <input type="submit" asp-action="AdicionarSaldo" />
+</form>
+<a asp-action="Voltar">Voltar</a>

@@ -13,9 +13,10 @@
 
 <body>
     <div id="container">
+        <p>Ola @ViewBag.Name</p>
         <p>Saldo na carteira</p>
         <p>@ViewBag.Saldo</p>
-        <a asp-action="HomeCarteira" asp-route-idUsuario="@Model[0].idUsuario">Recarregar créditos</a>
+        <a asp-action="HomeCarteira">Recarregar créditos</a>
         <h1>Selecione um veículo</h1>
         <p>@ViewBag.Ip</p>
         <table>
@@ -46,7 +47,7 @@
                     }
                 }
                 
-            <button type="submit" class="botao botao-block" id="cadastrar" asp-route-idUsuario="@Model[0].idUsuario" asp-action="CadastrarVeiculo">Cadastrar Veículo</button>
+            <button type="submit" class="botao botao-block" id="cadastrar" asp-action="CadastrarVeiculo">Cadastrar Veículo</button>
             </form>
                     
 
@@ -54,8 +55,7 @@
 
         <p>@Model[0].idUsuario</p>
 
-        <p>
-        </p>
+        <a asp-action="Sair">Sair</a>
 
     </div>
 </body>

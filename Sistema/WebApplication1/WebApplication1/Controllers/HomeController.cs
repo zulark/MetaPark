@@ -36,16 +36,16 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult CadastrarVeiculo(int idUsuario)
+        public IActionResult CadastrarVeiculo()
         {
-            ViewBag.IdUsuario = idUsuario;
-            return View("CadastrarVeiculo");
+            return View();
         }
 
         public IActionResult Cadastrar_CadastrarVeiculo(Veiculo veiculo)
         {
             //veiculo.idUsuario = 
             veiculo.idVeiculo = _context.Veiculo.Count();
+            veiculo.idUsuario = (int)HttpContext.Session.GetInt32("SessionIdUser");
             _context.Veiculo.Add(veiculo);
             _context.SaveChanges();
             return RedirectToAction("Voltar", veiculo.idUsuario);
@@ -126,8 +126,9 @@ namespace WebApplication1.Controllers
 
         }
 
-        public IActionResult Voltar(int idUsuario)
+        public IActionResult Voltar()
         {
+            int idUsuario = (int)HttpContext.Session.GetInt32("SessionIdUser");
             Veiculo veiculoEncontrado = new Veiculo();
             veiculoEncontrado = _context.Veiculo.FirstOrDefault(a => idUsuario == a.idUsuario);
             if(veiculoEncontrado == null)
@@ -144,6 +145,8 @@ namespace WebApplication1.Controllers
                     veiculosEncontrados.Add(veiculos[i]);
                 }
             }
+            ViewBag.Name = HttpContext.Session.GetString("SessionName");
+            ViewBag.Saldo = GetSaldo((int)HttpContext.Session.GetInt32("SessionIdUser")).ToString("C");
             //ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
             //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
             return View("Entrar", veiculosEncontrados);
@@ -166,6 +169,11 @@ namespace WebApplication1.Controllers
                 }
                 //ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
                 //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+
+                HttpContext.Session.SetString("SessionName", usuarioEncontrado.Nome);
+                HttpContext.Session.SetInt32("SessionIdUser", usuarioEncontrado.idUsuario);
+                ViewBag.Name = usuarioEncontrado.Nome;
+                ViewBag.Saldo = GetSaldo(usuarioEncontrado.idUsuario).ToString("C");
                 return View("Entrar", veiculosEncontrados);
             }
             if(usuarioEncontrado == null)
@@ -180,14 +188,39 @@ namespace WebApplication1.Controllers
             return View("Listar",_context.Usuario.ToList());
         }
 
+        public IActionResult AdicionarSaldo(decimal valor)
+        {
+            if(valor > 0)
+            {
+                decimal saldo = Convert.ToDecimal(_context.Entry("Usuario").Property("Saldo").CurrentValue);
+                Usuario usuarioEncontrado = new Usuario();
+                usuarioEncontrado = _context.Usuario.FirstOrDefault(a => HttpContext.Session.GetInt32("SessionIdUser") == a.idUsuario);
+
+                Usuario usuario = new Usuario();
+                usuario = usuarioEncontrado;
+                usuario.Saldo += valor;
+
+                _context.Entry(usuarioEncontrado).CurrentValues.SetValues(usuario);
+                
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Voltar");
+        }
+
+        public IActionResult Sair()
+        {
+            HttpContext.Session.Clear();
+            return View("Index");
+        }
+
         public decimal GetSaldo(int idUsuario)
         {
-            Carteira carteiraEncontrada = _context.Carteira.FirstOrDefault(a => a.idUsuario == idUsuario);
-            if (carteiraEncontrada == null)
+            Usuario usuarioEncontrado = _context.Usuario.FirstOrDefault(a => a.idUsuario == idUsuario);
+            if (usuarioEncontrado == null)
             {
                 throw new Exception();
             }
-            return Convert.ToDecimal(_context.Entry(carteiraEncontrada).Property("saldo").CurrentValue);
+            return Convert.ToDecimal(usuarioEncontrado.Saldo);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
