@@ -5,11 +5,11 @@ CREATE TABLE Usuario(
 	idUsuario int identity(0,1),
 	Nome varchar(50) NOT NULL,
 	Sobrenome varchar(50) NULL,
+	Saldo decimal(4,2) NOT NULL,
 	CPF varchar(14) NULL,
 	Login varchar(50) NOT NULL,
 	Senha varchar(40) NOT NULL,
 	Ativo bit NOT NULL,
-	Saldo decimal(4,2) NOT NULL,
 PRIMARY KEY 
 (
 	idUsuario ASC
@@ -66,13 +66,11 @@ INSERT INTO Usuario VALUES ('Oliver', 'Ramos','797.620.466-17','OliverR','123456
 INSERT INTO Usuario VALUES ('Márcia', 'Nunes','068.133.269-70','marciaN','123456',1);
 INSERT INTO Usuario VALUES ('Marcos', 'Mendes','663.361.084-06','marcosM','123456',1);
 
-SET IDENTITY_INSERT Usuario ON
-INSERT INTO Usuario(Nome. Sobrenome, CPF, Login, Senha, Ativo)  VALUES ('Natália', 'Barros','023.706.406-50','nataliab', '123456', 1, 53,21);
-INSERT INTO Usuario VALUES ('Noah', 'Barros','317.559.841-20','noahB','123456',1, 12,95);
-INSERT INTO Usuario VALUES ('Oliver', 'Ramos','797.620.466-17','OliverR','123456',1, 10.00);
-INSERT INTO Usuario VALUES ('Márcia', 'Nunes','068.133.269-70','marciaN','123456',1, 0);
-INSERT INTO Usuario VALUES ('Marcos', 'Mendes','663.361.084-06','marcosM','123456',1, 26.5);
-SET IDENTITY_INSERT Usuario OFF
+INSERT INTO Usuario VALUES ('Natália','Barros',53.95,'023.706.406-50','nataliab', '123456', 1);
+INSERT INTO Usuario VALUES ('Noah', 'Barros',12.95,'317.559.841-20','noahB','123456',1);
+INSERT INTO Usuario VALUES ('Oliver', 'Ramos',10.00,'797.620.466-17','OliverR','123456',1);
+INSERT INTO Usuario VALUES ('Márcia', 'Nunes',0,'068.133.269-70','marciaN','123456',1);
+INSERT INTO Usuario VALUES ('Marcos', 'Mendes',26.5,'663.361.084-06','marcosM','123456',1);
 
 INSERT INTO Veiculo VALUES (0,'Peugeot', '206','BVQ7861',0);
 INSERT INTO Veiculo VALUES (1,'Kia', 'Sorento','JVT6953',0);
