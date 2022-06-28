@@ -73,7 +73,13 @@ body {
 .form-check{ 
   font-weight: 600 !important;
 }
+#title{
+  color: #000;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
 
+#title:hover { transform: scale(1.1); }
 /* .login-box { 
   min-width: 500px;
   padding: 50px;    
