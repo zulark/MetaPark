@@ -8,11 +8,11 @@ namespace WebApplication1.Models
         public DbSet<Veiculo> Veiculo { get; set; }
         public DbSet<Acesso> Acesso { get; set; }
         public DbSet<Carteira> Carteira { get; set; }
-        public DbSet<LocalEst> Local { get; set; }
+        public DbSet<LocalEst> LocalEst { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=SNCCH01LABF118\TEW_SQLEXPRESS;Database=Estacionamento;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=SERVIDOR\SQLEXPRESS01;Database=Estacionamento;Trusted_Connection=True;");
         }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)

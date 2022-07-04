@@ -38,6 +38,7 @@ namespace WebApplication1.Controllers
 
         public IActionResult CadastrarVeiculo()
         {
+            ViewBag.Saldo = GetSaldo((int)HttpContext.Session.GetInt32("SessionIdUser")).ToString("C");
             return View();
         }
 
@@ -51,9 +52,19 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Voltar", veiculo.idUsuario);
         }
 
-        public IActionResult Selecionar(int idVeiculo)
+        public IActionResult SelecionarPark(int idVeiculo)
         {
-            Veiculo veiculoEncontrado = new Veiculo();
+            List<LocalEst> locais = _context.LocalEst.ToList();
+            List<LocalEst> locaisEncontrados = new List<LocalEst>();
+            for (int i = 0; i < _context.LocalEst.Count(); i++)
+            {
+                locaisEncontrados.Add(locais[i]);
+            }
+            ViewBag.idVeiculo = idVeiculo;
+            ViewBag.Saldo = GetSaldo((int)HttpContext.Session.GetInt32("SessionIdUser")).ToString("C");
+            return View("SelecionarPark", locaisEncontrados);
+
+            /*Veiculo veiculoEncontrado = new Veiculo();
             veiculoEncontrado = _context.Veiculo.FirstOrDefault(a => idVeiculo == a.idVeiculo);
             if (veiculoEncontrado == null)
             {
@@ -68,7 +79,29 @@ namespace WebApplication1.Controllers
             acesso.Saida = DateTime.Parse("1900/1/1 00:00");
 
             _context.Acesso.Add(acesso);
+            _context.SaveChanges();*/
+        }
+
+        public IActionResult Selecionar(int idVeiculo, int idLocal)
+        {
+            Veiculo veiculoEncontrado = new Veiculo();
+            veiculoEncontrado = _context.Veiculo.FirstOrDefault(a => idVeiculo == a.idVeiculo);
+            if (veiculoEncontrado == null)
+            {
+                return View("Erro", "Erro no processamento");
+            }
+            Acesso acesso = new Acesso();
+            acesso.idUsuario = veiculoEncontrado.idUsuario;
+            acesso.idVeiculo = veiculoEncontrado.idVeiculo;
+            acesso.idAcesso = _context.Acesso.Count() + 1;
+            acesso.idLocalEst = idLocal;
+            ViewBag.idUsuario = acesso.idUsuario;
+            acesso.Entrada = DateTime.Now;
+            acesso.Saida = DateTime.Parse("1900/1/1 00:00");
+
+            _context.Acesso.Add(acesso);
             _context.SaveChanges();
+            ViewBag.Saldo = GetSaldo((int)HttpContext.Session.GetInt32("SessionIdUser")).ToString("C");
             return View("AcessoConfirmado");
         }
 
@@ -104,6 +137,7 @@ namespace WebApplication1.Controllers
             double tempoPermanencia = acesso.Saida.Subtract(acessoEncontrado.Entrada).TotalMinutes;
             ViewBag.TempoPermanencia = TimeSpan.FromMinutes(Convert.ToDouble(tempoPermanencia)).ToString(@"hh\:mm\:ss");
             ViewBag.ValorAPagar = ((int)tempoPermanencia / 10 * 2).ToString("C");
+            ViewBag.Saldo = GetSaldo((int)HttpContext.Session.GetInt32("SessionIdUser")).ToString("C");
             return View("ConfirmarSaida");
         }
 
@@ -128,10 +162,18 @@ namespace WebApplication1.Controllers
 
         public IActionResult Voltar()
         {
+            return RedirectToAction("Home");
+            //ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
+            //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+            
+        }
+
+        public IActionResult Home()
+        {
             int idUsuario = (int)HttpContext.Session.GetInt32("SessionIdUser");
             Veiculo veiculoEncontrado = new Veiculo();
             veiculoEncontrado = _context.Veiculo.FirstOrDefault(a => idUsuario == a.idUsuario);
-            if(veiculoEncontrado == null)
+            if (veiculoEncontrado == null)
             {
                 return View("Erro", "Erro no processamento, realize o login novamente");
             }
@@ -147,8 +189,7 @@ namespace WebApplication1.Controllers
             }
             ViewBag.Name = HttpContext.Session.GetString("SessionName");
             ViewBag.Saldo = GetSaldo((int)HttpContext.Session.GetInt32("SessionIdUser")).ToString("C");
-            //ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
-            //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
+
             return View("Entrar", veiculosEncontrados);
         }
 
@@ -158,6 +199,10 @@ namespace WebApplication1.Controllers
             usuarioEncontrado = _context.Usuario.FirstOrDefault(a => usuario.Login == a.Login && usuario.Senha == a.Senha) ;
             if(usuarioEncontrado != null)
             {
+                HttpContext.Session.SetString("SessionName", usuarioEncontrado.Nome);
+                HttpContext.Session.SetInt32("SessionIdUser", usuarioEncontrado.idUsuario);
+                return RedirectToAction("Home");
+                /*
                 List<Veiculo> veiculos = _context.Veiculo.ToList();
                 List<Veiculo> veiculosEncontrados = new List<Veiculo>();
                 for (int i = 0; i < _context.Veiculo.Count(); i++)
@@ -169,12 +214,10 @@ namespace WebApplication1.Controllers
                 }
                 //ViewBag.Ip = Dns.GetHostEntry(Dns.GetHostName()).AddressList[1];
                 //.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
-
-                HttpContext.Session.SetString("SessionName", usuarioEncontrado.Nome);
-                HttpContext.Session.SetInt32("SessionIdUser", usuarioEncontrado.idUsuario);
+                */
                 ViewBag.Name = usuarioEncontrado.Nome;
                 ViewBag.Saldo = GetSaldo(usuarioEncontrado.idUsuario).ToString("C");
-                return View("Entrar", veiculosEncontrados);
+                //return View("Entrar", veiculosEncontrados);
             }
             if(usuarioEncontrado == null)
             {
@@ -192,18 +235,19 @@ namespace WebApplication1.Controllers
         {
             if(valor > 0)
             {
-                decimal saldo = Convert.ToDecimal(_context.Entry("Usuario").Property("Saldo").CurrentValue);
+                //decimal saldo = Convert.ToDecimal(_context.Entry("Usuario").Property("Saldo").CurrentValue);
                 Usuario usuarioEncontrado = new Usuario();
                 usuarioEncontrado = _context.Usuario.FirstOrDefault(a => HttpContext.Session.GetInt32("SessionIdUser") == a.idUsuario);
 
-                Usuario usuario = new Usuario();
-                usuario = usuarioEncontrado;
-                usuario.Saldo += valor;
+                Usuario newUsuario= new Usuario();
+                newUsuario = usuarioEncontrado;
+                newUsuario.Saldo += valor;
 
-                _context.Entry(usuarioEncontrado).CurrentValues.SetValues(usuario);
+                _context.Entry(usuarioEncontrado).CurrentValues.SetValues(newUsuario);
                 
                 _context.SaveChanges();
             }
+            ViewBag.Saldo = GetSaldo((int)HttpContext.Session.GetInt32("SessionIdUser")).ToString("C");
             return RedirectToAction("Voltar");
         }
 
